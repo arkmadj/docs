@@ -1,29 +1,16 @@
 ---
+description: REST and GraphQL API documentation on the Flows collection in Directus.
+readTime: 5 min read
 pageClass: page-reference
 ---
 
 # Flows
 
-<div class="two-up">
-<div class="left">
-
 > Flows enable custom, event-driven data processing and task automation within Directus.
-
-</div>
-<div class="right">
-
-[[toc]]
-
-</div>
-</div>
 
 ---
 
 ## The Flow Object
-
-<div class="two-up">
-<div class="left">
-<div class="definitions">
 
 `id` **uuid**\
 Primary key of the flow.
@@ -56,14 +43,10 @@ The permission used during the flow. One of `$public`, `$trigger`, `$full`, or U
 Timestamp in ISO8601 when the flow was created.
 
 `user_created` **many-to-one**\
-The user who created the flow. Many-to-one to [users](/reference/system/users/#the-users-object).
+The user who created the flow. Many-to-one to [users](/reference/system/users#the-users-object).
 
 `operation` **string**\
 UUID of the operation connected to the trigger in the flow.
-
-</div>
-</div>
-<div class="right">
 
 ```json
 {
@@ -81,17 +64,11 @@ UUID of the operation connected to the trigger in the flow.
 }
 ```
 
-</div>
-</div>
-
 ---
 
 ## List Flows
 
 List all flows that exist in Directus.
-
-<div class="two-up">
-<div class="left">
 
 ### Query Parameters
 
@@ -99,11 +76,8 @@ Supports all [global query parameters](/reference/query).
 
 ### Returns
 
-An array of up to [limit](/reference/query/#limit) [flow objects](#the-flow-object). If no items are available, data
-will be an empty array.
-
-</div>
-<div class="right">
+An array of up to [limit](/reference/query#limit) [flow objects](#the-flow-object). If no items are available, data will
+be an empty array.
 
 ### REST API
 
@@ -112,7 +86,7 @@ GET /flows
 SEARCH /flows
 ```
 
-[Learn more about SEARCH ->](/reference/introduction/#search-http-method)
+[Learn more about SEARCH ->](/reference/introduction#search-http-method)
 
 ### GraphQL
 
@@ -138,17 +112,11 @@ query {
 }
 ```
 
-</div>
-</div>
-
 ---
 
 ## Retrieve a flow
 
 List an existing flow by primary key.
-
-<div class="two-up">
-<div class="left">
 
 ### Query Parameters
 
@@ -157,9 +125,6 @@ Supports all [global query parameters](/reference/query).
 ### Returns
 
 Returns the requested [flow object](#the-flow-object).
-
-</div>
-<div class="right">
 
 ### REST API
 
@@ -197,17 +162,11 @@ query {
 }
 ```
 
-</div>
-</div>
-
 ---
 
 ## Create a Flow
 
 Create a new flow.
-
-<div class="two-up">
-<div class="left">
 
 ### Query Parameters
 
@@ -220,9 +179,6 @@ A partial [flow object](#the-flow-object).
 ### Returns
 
 Returns the [flow object](#the-flow-object) for the created flow.
-
-</div>
-<div class="right">
 
 ### REST API
 
@@ -266,17 +222,11 @@ mutation {
 }
 ```
 
-</div>
-</div>
-
 ---
 
 ## Create Multiple Flows
 
 Create multiple new flows.
-
-<div class="two-up">
-<div class="left">
 
 ### Query Parameters
 
@@ -289,9 +239,6 @@ An array of partial [flow objects](#the-flow-object).
 ### Returns
 
 Returns the [flow object](#the-flow-object) for the created flow.
-
-</div>
-<div class="right">
 
 ### REST API
 
@@ -355,17 +302,11 @@ mutation {
 }
 ```
 
-</div>
-</div>
-
 ---
 
 ## Update a Flow
 
 Update an existing flow.
-
-<div class="two-up">
-<div class="left">
 
 ### Query Parameters
 
@@ -378,9 +319,6 @@ A partial [flow object](#the-flow-object).
 ### Returns
 
 Returns the [flow object](#the-flow-object) for the updated flow.
-
-</div>
-<div class="right">
 
 ### REST API
 
@@ -421,17 +359,11 @@ mutation {
 }
 ```
 
-</div>
-</div>
-
 ---
 
 ## Update Multiple Flows
 
 Update multiple existing flows.
-
-<div class="two-up">
-<div class="left">
 
 ### Query Parameters
 
@@ -439,22 +371,15 @@ Supports all [global query parameters](/reference/query).
 
 ### Request Body
 
-<div class="definitions">
-
 `keys` **Required**\
 Array of primary keys of the flows you'd like to update.
 
 `data` **Required**\
 Any of [the flow object](#the-flow-object)'s properties.
 
-</div>
-
 ### Returns
 
 Returns the [flow objects](#the-flow-object) for the updated flows.
-
-</div>
-<div class="right">
 
 ### REST API
 
@@ -502,24 +427,15 @@ mutation {
 }
 ```
 
-</div>
-</div>
-
 ---
 
 ## Delete a Flow
 
 Delete an existing flow.
 
-<div class="two-up">
-<div class="left">
-
 ### Returns
 
 Empty body.
-
-</div>
-<div class="right">
 
 ### REST API
 
@@ -555,17 +471,11 @@ mutation {
 }
 ```
 
-</div>
-</div>
-
 ---
 
 ## Delete Multiple Flows
 
 Delete multiple existing flows.
-
-<div class="two-up">
-<div class="left">
 
 ### Request Body
 
@@ -574,9 +484,6 @@ An array of flows primary keys
 ### Returns
 
 Empty body.
-
-</div>
-<div class="right">
 
 ### REST API
 
@@ -619,22 +526,13 @@ mutation {
 }
 ```
 
-</div>
-</div>
-
 ## Flow with GET webhook trigger
 
 Start a flow with GET webhook trigger.
 
-<div class="two-up">
-<div class="left">
-
 ### Returns
 
 Result of the flow, if any.
-
-</div>
-<div class="right">
 
 ### REST API
 
@@ -649,15 +547,9 @@ GET /flows/trigger/:flow_uuid
 // Payload here
 ```
 
-</div>
-</div>
-
 ## Flow with POST webhook trigger
 
 Start a flow with POST webhook trigger.
-
-<div class="two-up">
-<div class="left">
 
 ### Request Body
 
@@ -666,9 +558,6 @@ Payload for the POST request.
 ### Returns
 
 Result of the flow, if any.
-
-</div>
-<div class="right">
 
 ### REST API
 
@@ -682,6 +571,3 @@ POST /flows/trigger/:flow_uuid
 // POST /flows/trigger/202a940b-a00b-47df-b832-369c53f13122
 // Payload here
 ```
-
-</div>
-</div>

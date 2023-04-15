@@ -1,10 +1,15 @@
+---
+description:
+  Users are the individual accounts for authenticating into the API and App. Each user belongs to a Role which defines
+  its access Permissions.
+readTime: 7 min read
+---
+
 # Users, Roles & Permissions
 
-> [Users](/getting-started/glossary/#users) are the individual accounts for authenticating into the API and App. Each
-> user belongs to a [Role](/getting-started/glossary/#roles) which defines its access
-> [Permissions](/getting-started/glossary/#permissions).
-
-[[toc]]
+> [Users](/getting-started/glossary#users) are the individual accounts for authenticating into the API and App. Each
+> user belongs to a [Role](/getting-started/glossary#roles) which defines its access
+> [Permissions](/getting-started/glossary#permissions).
 
 <!--
 
@@ -24,7 +29,7 @@ Directus comes with two Roles out of the box, Admin and Public. The Admin role p
 the app, and this cannot be limited. This Admin Role provides full, app-wide control to the Project owners,
 administrators, and creators. The Public role comes with all permissions turned off by default and these can be fully
 reconfigured as needed. This Public role determines the access permissions given for any unauthenticated request to app
-data including un-authenticated users, visitors to your website or any other web request to your Directus Project's API.
+data including unauthenticated users, visitors to your website or any other web request to your Directus Project's API.
 
 In addition, Admins can create as many Roles as they wish and configure permissions granularly.
 
@@ -63,7 +68,7 @@ case-by-case basis by administrators.
 - **App Access** — Allows logging in to the App
 - **Admin Access** — Gives full permission to project data and Settings
 - **IP Access** — An allow-list of IP addresses from which the platform can be accessed, empty allows all
-- **Require 2FA** — Forces all users within this role to use two-factor authentication
+- **Require MFA** — Forces all users within this role to use two-factor authentication
 - **Users in Role** — A list of all users within this role
 
 ## Delete a Role
@@ -138,7 +143,7 @@ _action_.
 
 ::: warning Read Field Permissions
 
-The Directus App always requires read access to the Primary Key field (eg: `id`) so it can uniquely identify items.
+The Directus App always requires read access to the Primary Key field (e.g., `id`) so it can uniquely identify items.
 Also, if a Collection has "Archive" or "Sort" fields configured, those fields will also need read access to use the
 App's soft-delete and manual sorting features.
 
@@ -146,15 +151,15 @@ App's soft-delete and manual sorting features.
 
 ### Update (Custom Access)
 
-5. **Item Permissions** control which items can be updated, as defined by [Filter Rules](/reference/filter-rules/).
+5. **Item Permissions** control which items can be updated, as defined by [Filter Rules](/reference/filter-rules).
 6. **Field Permissions** control which fields can be updated. Fields are individually toggled.
 7. **Field Validation** define the rules for field values on update, as defined by
-   [Filter Rules](/reference/filter-rules/).
+   [Filter Rules](/reference/filter-rules).
 8. **Field Presets** control the field defaults when updating an item
 
 ### Delete (Custom Access)
 
-5. **Item Permissions** control which items can be deleted, as defined by the [Filter Rules](/reference/filter-rules/)
+5. **Item Permissions** control which items can be deleted, as defined by the [Filter Rules](/reference/filter-rules)
    entered.
 
 ---
@@ -191,7 +196,7 @@ permissions for a Collection, but can be further enhanced via email notification
 Directus supports endlessly configurable workflows, so we will only cover one simple example below.
 
 1. To create a structured workflow for **Articles**, the first step is
-   [Creating a Field](/configuration/data-model/#creating-a-field) to track the article "status" — we'll call it
+   [Creating a Field](/configuration/data-model#creating-a-field) to track the article "status" — we'll call it
    **Status**, but it can be named anything.
 2. Next, create different Roles for each stage of the workflow, such as `author` and `manager`.
 3. Finally, configure the Role permissions based on the possible values of that Status field, such as `draft`, `review`,

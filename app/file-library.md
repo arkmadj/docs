@@ -1,3 +1,8 @@
+---
+description: The File Library Module aggregates all files within the Directus Project into one consolidated library.
+readTime: 7 min read
+---
+
 # File Library
 
 > The File Library Module aggregates all files within the Directus Project into one consolidated library. It is a
@@ -6,12 +11,10 @@
 
 ![File Library](https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220305A/file-library-20220307A.webp)
 
-[[toc]]
-
 ::: warning More Documents on Folder and File Management
 
 This is a non-technical, no-code guide to the File Library Module. Please note there is documentation on programmatic
-[Folder](/reference/system/folders/) and [File](/reference/files/) management via the API.
+[Folder](/reference/system/folders) and [File](/reference/files) management via the API.
 
 :::
 
@@ -19,7 +22,7 @@ This is a non-technical, no-code guide to the File Library Module. Please note t
 
 ::: tip Required Knowledge
 
-Familiarity with the [Collections Page](/app/content-collections/) will be helpful but not necessary.
+Familiarity with the [Collections Page](/app/content/collections) will be helpful but not necessary.
 
 :::
 
@@ -29,9 +32,9 @@ which means [User and Role access permissions](/configuration/users-roles-permis
 granular on both Folders and Files. Multiple files can be uploaded at once through the app and also programmatically via
 the API. Any type of file can be uploaded, _not just images_. When a Folder is selected from the Navigation Bar, the
 [File Listing Page](#folders) is presented. This page has all the same features and functionalities as the
-[Collections Page](/app/content-collections/).
+[Collections Page](/app/content/collections).
 
-<video title="How the File Library Works" autoplay muted loop controls>
+<video title="How the File Library Works" autoplay playsinline muted loop controls>
 	<source src="https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220305A/how-it-works-20220305A.mp4" type="video/mp4"/>
 	<p>
 		Your browser is not displaying the video for some reason. Here's a <a href="">link to the video</a> instead.
@@ -52,8 +55,7 @@ the API. Any type of file can be uploaded, _not just images_. When a Folder is s
 
 When a file is clicked in the File Listing Page, the File Details Page appears. This is a custom form for viewing assets
 and embeds, with core Fields included out-of-the-box (see below), and the ability for Administrators to add additional
-custom Fields. This page has the same features and functionality as the
-[Item Details Page](/getting-started/glossary/#items).
+custom Fields. This page has the same features and functionality as the [Item Page](/getting-started/glossary#items).
 
 ![Files](https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220305A/files-20220305A.webp)
 
@@ -112,7 +114,7 @@ The file sidebar also includes the following details, which are not editable and
 
 Rotate, crop, flip, or adjust aspect ratios of an image.
 
-<video alt="Edit an Image" loop muted controls autoplay>
+<video alt="Edit an Image" loop muted controls autoplay playsinline>
   <source src="https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220516A/edit-an-image-20220516A.mp4" type="video/mp4">
 </video>
 
@@ -131,13 +133,13 @@ Edits overwrite the original file on disk. This can't be reversed.
 We covered the File Library's three upload methods in [How it Works](#how-it-works). Keep in mind that files can also be
 added through different Interfaces as well. For example, Users can upload an Avatar image when they fill in their User
 Details. Similarly, Items with an Image Field will have a file upload Interface on the Item Detail page. Files can also
-be [uploaded programmatically via the API](/reference/files/).
+be [uploaded programmatically via the API](/reference/files).
 
 ## Replace a File
 
 When a file is replaced, its existing info and all relationships are kept.
 
-<video alt="Replace a File" loop muted controls autoplay>
+<video alt="Replace a File" loop muted controls autoplay playsinline>
   <source src="https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220608A/replace-a-file-20220608A.mp4" type="video/mp4">
 </video>
 
@@ -155,13 +157,13 @@ Folders provide the organization system for Files.
 
 They can be named, renamed, and nested as sub-folders anywhere in the Folder hierarchy. Once a Folder is selected from
 the Navigation Bar, File Listing Page opens. The File Listing Page displays all Files within a Folder. It also enables
-all other features and functionalities from the [Collections Page](/app/content-collections/) such as batch editing,
+all other features and functionalities from the [Collections Page](/app/content/collections) such as batch editing,
 batch deleting, sorting, filtering, searching, etc. Folders can also be managed
-[programmatically via the API](/docs/reference/system/folders.md).
+[programmatically via the API](/reference/system/folders).
 
 ## Create a Folder
 
-<video alt="Create a Folder" loop muted controls autoplay>
+<video alt="Create a Folder" loop muted controls autoplay playsinline>
   <source src="https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220305A/create-a-folder-20220305A.mp4" type="video/mp4">
 </video>
 
@@ -171,7 +173,7 @@ batch deleting, sorting, filtering, searching, etc. Folders can also be managed
 
 ## Rename a Folder
 
-<video alt="Renaming a Folder" loop muted controls autoplay>
+<video alt="Renaming a Folder" loop muted controls autoplay playsinline>
   <source src="https://cdn.directus.io/docs/v9/app-guide/file-library/rename-a-folder-20220215A.mp4" type="video/mp4">
 </video>
 
@@ -181,7 +183,7 @@ batch deleting, sorting, filtering, searching, etc. Folders can also be managed
 
 ## Move a Folder
 
-<video alt="Moving a Folder" loop muted controls autoplay>
+<video alt="Moving a Folder" loop muted controls autoplay playsinline>
   <source src="https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220305A/move-a-folder20220305A.mp4" type="video/mp4">
 </video>
 
@@ -192,7 +194,7 @@ batch deleting, sorting, filtering, searching, etc. Folders can also be managed
 
 ## Delete a Folder
 
-<video alt="Deleting a Folder" loop muted controls autoplay>
+<video alt="Deleting a Folder" loop muted controls autoplay playsinline>
   <source src="https://cdn.directus.io/docs/v9/app-guide/file-library/delete-a-folder-20220215A.mp4" type="video/mp4">
 </video>
 

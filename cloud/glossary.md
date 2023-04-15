@@ -1,12 +1,15 @@
-# Glossary
+---
+description: A glossary of terms specific to Directus Cloud.
+readTime: 10 min read
+---
 
-[[toc]]
+# Glossary
 
 ## Asset Storage
 
 Directus Core allows asset storage for any type of file. This applies to all Cloud Projects. However, on Directus Cloud,
 certain hard technical limits apply to file uploads, such as limits on size per asset and total asset storage per
-Project. For more details, see [Cloud Policies](https://directus.io/cloud-policies/#)
+Project. For more details, see [Cloud Policies](https://directus.io/cloud-policies#)
 
 ## Automatic Updates
 
@@ -26,7 +29,7 @@ Version-locking is available on Enterprise Projects.
 By default, file assets and databases are backed up once per day on all Standard and Enterprise Projects. Additionally,
 Enterprise customers can work with our team for more tailored backup solutions. In the event of an emergency, such as
 your Node crashing, don't worry! Your data will be safe. If you need access to your backed-up data,
-[contact us](https://directus.io/contact/)
+[contact us](https://directus.io/contact)
 
 :::warning
 
@@ -52,7 +55,7 @@ and greatest features! Cloud Exclusives development is managed by the Core Team,
 
 :::tip
 
-Looking to sponsor development of an Extension or Cloud Exclusive? [Contact Us](https://directus.io/contact/)
+Looking to sponsor development of an Extension or Cloud Exclusive? [Contact Us](https://directus.io/contact)
 
 :::
 
@@ -63,7 +66,7 @@ via the schema endpoints.
 
 :::tip Enterprise Clients
 
-The Directus Team will help you work through this process on all [Enterprise Projects](https://directus.io/contact/)
+The Directus Team will help you work through this process on all [Enterprise Projects](https://directus.io/contact)
 
 :::
 
@@ -204,7 +207,7 @@ secure and safe [tenancy architectures](#multi-tenancy).
 
 :::tip Directus Core Security Features
 
-Directus core comes with even more security features out-of-the-box, including IP address whitelabeling, 2FA enabling,
+Directus core comes with even more security features out-of-the-box, including IP address whitelabeling, MFA enabling,
 SSO options, customization for Password Rule requirements and the flexibility to use any access token paradigm desired.
 
 :::
@@ -229,7 +232,7 @@ data will be delivered with the lowest possible latency.
 In the context of these docs, Infrastructure refers to the hardware running your Project, including the
 [database](#multi-tenancy), [serverless nodes](#nodes), [asset storage](#asset-storage) and [global CDN](#global-cdn).
 Infrastructure differs by Project tier. Please refer to [Projects](/cloud/projects) as well as the Infrastructure
-section on the [Pricing page](https://directus.io/pricing/) for side-by-side comparisons.
+section on the [Pricing page](https://directus.io/pricing) for side-by-side comparisons.
 
 ## Nodes
 
@@ -246,7 +249,7 @@ Each Node Type provides a different level of processing power.
 
 - **Community**\
   Community Projects come equipped with one Node, which can handle basic web traffic required for hobby projects, learning
-  and demoing Directus Cloud, and other non-production use cases. Community Nodes will pause after 3 days of [inactivity](/cloud/projects/#resume-a-community-project).
+  and demoing Directus Cloud, and other non-production use cases. Community Nodes will pause after 3 days of [inactivity](/cloud/projects#resume-a-community-project).
 
 - **General Purpose**\
    General Purpose Nodes are the basic Node Type offered on Standard Projects. These Nodes are the right choice for most
@@ -262,8 +265,8 @@ Each Node Type provides a different level of processing power.
 
 :::tip
 
-In Standard Projects, the Node Type configured [and associated cost per hour](/cloud/teams/#manage-billing) will apply
-to both Active and Standby Nodes.
+In Standard Projects, the Node Type configured [and associated cost per hour](/cloud/teams#manage-billing) will apply to
+both Active and Standby Nodes.
 
 :::
 
@@ -273,7 +276,7 @@ Active Nodes stay on constantly. Projects must have at least one Active Node in 
 
 :::warning
 
-Community Nodes paused due to [inactivity](/cloud/projects/#resume-a-community-project) can't receive requests until
+Community Nodes paused due to [inactivity](/cloud/projects#resume-a-community-project) can't receive requests until
 unpaused.
 
 :::
@@ -289,7 +292,7 @@ Standby Nodes stay turned-off until traffic starts to take up significant system
 activate one-by-one, as needed, to safely handle the increase in traffic. Activation occurs within just a few moments.
 
 Standby Nodes are not required, however you don't pay for usage when Standby Nodes are disabled. For more pricing
-information, see [billing](/cloud/teams/#manage-billing).
+information, see [billing](/cloud/teams#manage-billing).
 
 ### Auto-scaling
 
@@ -298,8 +301,8 @@ at safe levels.
 
 :::tip Optimal Node Configuration
 
-As noted under [Billing](/cloud/teams/#manage-billing), Projects can be reconfigured as needed. Check out the
-[Project Monitor page](/cloud/projects/#monitor-a-project) for performance analytics that can help inform Node
+As noted under [Billing](/cloud/teams#manage-billing), Projects can be reconfigured as needed. Check out the
+[Project Monitor page](/cloud/projects#monitor-a-project) for performance analytics that can help inform Node
 configuration decisions.
 
 :::
@@ -309,12 +312,32 @@ configuration decisions.
 Directus does not impose _arbitrary_ software-based limits of any kind. So for things like Collections, Roles or Users -
 whether you have 10 or 10,000 of them - you are free to build out your Project as needed, with no up-charge. However,
 actual Project performance is going to depend on Node configuration, so there are hard technical limits. For details,
-see [Cloud Policies](https://directus.io/cloud-policies/)
+see [Cloud Policies](https://directus.io/cloud-policies)
 
 ## Rate Limiting
 
-Rate limiting refers to technical limitations within Directus Cloud as well as Cloud Projects.\
-For details, see [Cloud Policies](https://directus.io/cloud-policies/#)
+Rate limiting refers to technical limitations within Directus Cloud as well as Cloud Projects. You will encounter the
+following API request limits at each node tier.
+
+| Tier                       | Limit                                               |
+| -------------------------- | --------------------------------------------------- |
+| Community                  | 10 requests per second per IP _(50 per second max)_ |
+| Standard (General Purpose) | 25 requests per second per node per IP              |
+| Standard (Performance)     | 50 requests per second per node per IP              |
+| Enterprise                 | 100 requests per second per node per IP             |
+
+:::tip
+
+These limits are additive and load balanced. For example, a Standard Project with two Performance nodes would get 100
+requests per second per IP `50 requests * 2 nodes = 100`.
+
+:::
+
+:::tip Learn More
+
+For details on other limitations, please see [Cloud Policies](https://directus.io/cloud-policies/#)
+
+:::
 
 ## Support Options
 
@@ -324,7 +347,7 @@ There are three types of support for Directus:
 
 Because Directus is an open-source Project, you're encouraged to reach out to the Community for help on Projects, _and
 of course help others as well_. Find us on [GitHub](https://github.com/directus/directus/discussions) and
-[Discord](https://directus.chat/) to join the thousands of other developers all discussing and guiding the future of the
+[Discord](https://directus.chat) to join the thousands of other developers all discussing and guiding the future of the
 Directus platform. Most common questions have already been asked and answered and can be easily searched.
 
 :::warning No Guaranteed Response Time
@@ -341,20 +364,20 @@ Enterprise Projects, and Premium Support adds 24/7 response times for critical s
 
 :::tip Add-on Support
 
-Looking for Basic or Premium Support on a self-hosted Project? [Contact Sales](https://directus.io/contact/)
+Looking for Basic or Premium Support on a self-hosted Project? [Contact Sales](https://directus.io/contact)
 
 :::
 
 ## System Status
 
-<video alt="System Status" loop muted controls autoplay>
+<video alt="System Status" loop muted controls autoplay playsinline>
   <source src="https://cdn.directus.io/docs/v9/cloud/glossary/glossary-20220322A/system-status-20220329A.mp4" type="video/mp4">
 </video>
 
 Click <span mi icon>check</span> in the Dashboard Header to navigate to the System Status page. This page is where to
 _find out what happened_ in the super rare event that the network slows down or goes offline. Here you can view the
 current connectivity status of Directus Cloud, the status on individual Projects by URL and a daily Incidents log. For
-more information, see [Cloud Policies](https://directus.io/cloud-policies/#)
+more information, see [Cloud Policies](https://directus.io/cloud-policies#)
 
 ## Multi-tenancy
 
@@ -371,11 +394,11 @@ Standard Projects are created using a multi-tenant architecture. However, if you
 impact your Project, because each Standard Project is scoped to one container per Project with dedicated minimum resources.
 Projects also have the ability to scale beyond this minimum allocation based on currently available resources within the
 multitenant pool. However, these additional resources are not guaranteed and are offered on a dynamic first-come, first-serve
-basis. For end-to-end, single-tenant infrastructure with fully dedicated resources, [contact us about our Enterprise Tier](https://directus.io/contact/)
+basis. For end-to-end, single-tenant infrastructure with fully dedicated resources, [contact us about our Enterprise Tier](https://directus.io/contact)
 
 **Enterprise**\
 Databases on Enterprise Projects are single-tenant, 100% dedicated to your Project - no neighbors! Ready to upgrade to Enterprise?
-[Contact us](https://directus.io/contact/)
+[Contact us](https://directus.io/contact)
 
 :::tip
 

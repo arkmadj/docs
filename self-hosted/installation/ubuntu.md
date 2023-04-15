@@ -1,3 +1,8 @@
+---
+description: How to run Directus on Ubuntu.
+readTime: 1 min read
+---
+
 # Ubuntu
 
 DigitalOcean provides a great tutorial on how to run a Node.js based app in production. See

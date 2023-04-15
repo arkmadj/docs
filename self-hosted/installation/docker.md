@@ -1,3 +1,8 @@
+---
+description: How to host Directus on Docker.
+readTime: 3 min read
+---
+
 # Installing With Docker
 
 Directus is published to both [Docker Hub](https://hub.docker.com/r/directus/directus) and
@@ -45,7 +50,7 @@ ADMIN_PASSWORD="d1r3ctu5"
 ## Persistence
 
 Containers are ephemeral, and this means that whenever you stop a container, all the data associated with it is going to
-be removed [unless you persist them](https://docs.docker.com/storage/) when creating your container.
+be removed [unless you persist them](https://docs.docker.com/storage) when creating your container.
 
 Directus image by default
 [will use the following locations](https://github.com/directus/directus/blob/main/docker/Dockerfile#L56-L60) for data
@@ -53,7 +58,7 @@ persistence (note that these can be changed through environment variables)
 
 - `/directus/uploads` for uploads
 - `/directus/database` (only when using SQLite and not configured to a different folder)
-- `/directus/extensions` for extension loadings
+- `/directus/extensions` for loading extensions
 
 ## Docker Compose
 
@@ -119,7 +124,7 @@ services:
       ADMIN_PASSWORD: 'd1r3ctu5'
 
       # Make sure to set this in production
-      # (see https://docs.directus.io/self-hosted/config-options/#general)
+      # (see https://docs.directus.io/self-hosted/config-options#general)
       # PUBLIC_URL: 'https://directus.example.com'
 
 networks:

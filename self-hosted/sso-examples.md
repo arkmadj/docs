@@ -1,3 +1,9 @@
+---
+description:
+  A collection of example Directus configurations for integrating with various OAuth 2.0 and OpenID platforms.
+readTime: 2 min read
+---
+
 # SSO Examples
 
 Below is a collection of example Directus configurations for integrating with various OAuth 2.0 and OpenID platforms.
@@ -89,8 +95,8 @@ AUTH_KEYCLOAK_IDENTIFIER_KEY="email"
 
 ```
 AUTH_GITHUB_DRIVER="oauth2"
-AUTH_GOOGLE_CLIENT_ID="..."
-AUTH_GOOGLE_CLIENT_SECRET="..."
+AUTH_GITHUB_CLIENT_ID="..."
+AUTH_GITHUB_CLIENT_SECRET="..."
 AUTH_GITHUB_AUTHORIZE_URL="https://github.com/login/oauth/authorize"
 AUTH_GITHUB_ACCESS_URL="https://github.com/login/oauth/access_token"
 AUTH_GITHUB_PROFILE_URL="https://api.github.com/user"

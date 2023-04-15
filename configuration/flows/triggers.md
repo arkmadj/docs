@@ -1,10 +1,14 @@
+---
+description:
+  A Trigger initiates a Flow on some internal or external event, such as an in-app activity, incoming webhook, cron job,
+  execution of Operation(s) from other Flows, and beyond!
+readTime: 3 min read
+---
+
 # Triggers
 
-> Triggers allow you to activate Flows on just about any conceivable internal or external event, including any in-app
-> activities, incoming webhooks, cron jobs, Operations in other Flows, or the manual click of a button in the Directus
-> App.
-
-[[toc]]
+> A Trigger initiates a Flow on some internal or external event, such as an in-app activity, incoming webhook, cron job,
+> execution of Operation(s) from other Flows, _and beyond!_
 
 :::tip Before You Begin
 
@@ -16,7 +20,7 @@ Please be sure to read the documentation on [Flows](/configuration/flows).
 
 ![Event Hooks](https://cdn.directus.io/docs/v9/configuration/flows/triggers/triggers-20220603A/event-hook-20220602A.webp)
 
-Event Hooks are triggered by platform or data events. The logic is based on [Custom API Hooks](/extensions/hooks/). If
+Event Hooks are triggered by platform or data events. The logic is based on [Custom API Hooks](/extensions/hooks). If
 your event generates data, this will be stored in the Flow Object.
 
 - **Type** — Choose the type of Event Hook:
@@ -51,7 +55,7 @@ This Trigger enables you to create Data at scheduled intervals, via 6-point cron
 
 ![Another Flow](https://cdn.directus.io/docs/v9/configuration/flows/triggers/triggers-20220603A/another-flow-20220602A.webp)
 
-This Trigger executes a Flow via the [Trigger Flow](/configuration/flows/operations/#another-flow) Operation, allowing
+This Trigger executes a Flow via the [Trigger Flow](/configuration/flows/operations#another-flow) Operation, allowing
 you to chain Flows together.
 
 - **Response Body** — Select data to return in the response to the Trigger Flow.

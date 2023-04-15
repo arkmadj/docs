@@ -1,0 +1,19 @@
+[build.environment]
+	NODE_VERSION = "16"
+	NPM_FLAGS = "--version" # prevent Netlify npm install
+
+[build]
+  publish = ".vitepress/dist"
+  command = "npx pnpm i --store=node_modules/.pnpm-store --frozen-lockfile && npx pnpm build"
+
+[dev]
+	command = "pnpm run dev"
+	targetPort = 3000
+	autoLaunch = false
+	framework = "#custom"
+
+[[redirects]]
+   from = "/"
+   to = "/getting-started/introduction"
+   status = 301
+   force = true

@@ -1,10 +1,16 @@
+---
+description:
+  The JS SDK provides an intuitive interface for the Directus API from within a JavaScript-powered project (browsers and
+  Node.js). The default implementation uses [Axios](https://npmjs.com/axios) for transport and `localStorage` for
+  storing state.
+readTime: 14 min read
+---
+
 # JavaScript SDK
 
 > The JS SDK provides an intuitive interface for the Directus API from within a JavaScript-powered project (browsers and
 > Node.js). The default implementation uses [Axios](https://npmjs.com/axios) for transport and `localStorage` for
 > storing state.
-
-[[toc]]
 
 ## Installation
 
@@ -224,7 +230,9 @@ class MyAuth extends IAuth {
 	}
 }
 
-const directus = new Directus('http://directus.example.com', { auth: new MyAuth() });
+const directus = new Directus('http://directus.example.com', {
+	auth: new MyAuth(),
+});
 ```
 
 ### Directus Implementation
@@ -235,8 +243,15 @@ By default, Directus creates an instance of `Auth` which handles refresh tokens 
 ### Get current token
 
 ```ts
-const token = directus.auth.token;
+const token = await directus.auth.token;
 ```
+
+::: warning Async
+
+Reading the token is an asynchronous getter. This makes sure that any currently active `refresh` calls are being awaited
+before the current token is returned.
+
+:::
 
 ### Login
 
@@ -257,7 +272,7 @@ await directus.auth.static('static_token');
 
 ### Refresh Auth Token
 
-By default, Directus will handle token refreshes. Although, you can handle this behaviour manually by setting
+By default, Directus will handle token refreshes. Although, you can handle this behavior manually by setting
 [`autoRefresh`](#options.auth.autoRefresh) to `false`.
 
 ```js
@@ -269,7 +284,7 @@ await directus.auth.refresh();
 If you're developing locally, you might not be able to refresh your auth token automatically in all browsers. This is
 because the default auth configuration requires secure cookies to be set, and not all browsers allow this for localhost.
 You can use a browser which does support this such as Firefox, or
-[disable secure cookies](/self-hosted/config-options/#security).
+[disable secure cookies](/self-hosted/config-options#security).
 
 :::
 
@@ -351,7 +366,9 @@ class MyTransport extends ITransport {
 	}
 }
 
-const directus = new Directus('http://directus.example.com', { transport: new MyTransport() });
+const directus = new Directus('http://directus.example.com', {
+	transport: new MyTransport(),
+});
 ```
 
 ### Directus Implementation
@@ -386,7 +403,9 @@ class SessionStorage extends BaseStorage {
 	}
 }
 
-const directus = new Directus('http://directus.example.com', { storage: new SessionStorage() });
+const directus = new Directus('http://directus.example.com', {
+	storage: new SessionStorage(),
+});
 ```
 
 ### Directus Implementation
@@ -710,7 +729,7 @@ const fileId = await directus.files.createOne(form, {}, {
 
 ### Importing a file
 
-Example of [importing a file from a URL](/reference/files/#import-a-file):
+Example of [importing a file from a URL](/reference/files#import-a-file):
 
 ```js
 await directus.files.import({

@@ -1,17 +1,20 @@
+---
+description: How to get support for your Directus project.
+readTime: 4 min read
+---
+
 # Help & Support
 
 > Directus is offered completely free and open-source for anyone wishing to self-host the platform. If you have
 > questions along the way, there are many resources, both free and paid, to help you get up-and-running smoothly.
 
-[[toc]]
-
 ## Troubleshooting Steps
 
 If you're experiencing issues or think you have found a problem in Directus, be sure to follow these steps before
-[Reporting a Bug](/contributing/introduction/#bug-reporting):
+[Reporting a Bug](/contributing/introduction#bug-reporting):
 
 1. Ensure your server and database meet the
-   [minimum requirements](/self-hosted/installation/cli/#_1-confirm-minimum-requirements).
+   [minimum requirements](/self-hosted/installation/cli#_1-confirm-minimum-requirements).
 2. Ensure you’re on the [latest version](https://github.com/directus/directus/releases/latest) of Directus.
 3. Stop `CTRL+C` and restart the server `npx directus start`.
 4. Run the database migration script: `directus database migrate:latest`\
@@ -22,15 +25,8 @@ If you're experiencing issues or think you have found a problem in Directus, be 
 8. Check for [existing Issues](https://github.com/directus/directus/issues?q=is%3Aissue) (and
    [Discussions](https://github.com/directus/directus/discussions)) that match your problem.
 
-::: tip Source Contributors
-
-If you have installed from source, then you should also remove all dependencies by running `npx lerna clean -y` and
-reinstall them with `npm install`
-
-:::
-
 If you're still experiencing a problem after completing the above steps, you can chat through things on our
-[community support](#community-support) or [report a bug](/contributing/introduction/#bug-reporting).
+[community support](#community-support) or [report a bug](/contributing/introduction#bug-reporting).
 
 ## Support Tiers
 
@@ -63,14 +59,14 @@ us at [support@directus.io](mailto:support@directus.io).
 ### Commissioned Features
 
 If you need a specific feature added to Directus faster than the normal development timeline,
-[reach out to us](https://directus.io/contact/) for a quote. Our parent agency will often help subsidize the cost of
-developing new features if they pass our [80/20 Rule](/contributing/introduction/#feature-requests) and can be merged
+[reach out to us](https://directus.io/contact) for a quote. Our parent agency will often help subsidize the cost of
+developing new features if they pass our [80/20 Rule](/contributing/introduction#feature-requests) and can be merged
 into the core codebase. Other custom/proprietary development will be built bespoke within our robust extension system.
 
 ### Expedited Fixes
 
 We triage all reported bugs based on priority and how long the fix is estimated to take. If you need a specific issue
-resolved sooner, [reach out to us](https://directus.io/contact/) for a quote.
+resolved sooner, [reach out to us](https://directus.io/contact) for a quote.
 
 ## Frequently Asked Questions
 
@@ -87,7 +83,7 @@ Directus is primarily a free and open-source project, maintained by a small core
 donate their time and resources.
 
 Our platform is feature-rich, however we strictly adhere to our
-[80/20 Rule](/contributing/introduction/#feature-requests) to avoid a messy/bloated codebase. Directus is also quite
+[80/20 Rule](/contributing/introduction#feature-requests) to avoid a messy/bloated codebase. Directus is also quite
 stable, however new issues still arise, some of which may be triaged with a lower prioritization.
 
 If you need, you can contact us about [sponsoring expedited fixes](#expedited-fixes) or

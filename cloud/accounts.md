@@ -1,12 +1,17 @@
+---
+description:
+  Creating an Account is easy and free. Your Account gives you SuperAdmin access to your Teams and Projects on Directus
+  Cloud, enabling you to create and manage Teams, Team Members, Projects, and Project Billing.
+readTime: 3 min read
+---
+
 # Cloud Accounts
 
 > Creating an Account is easy and free. Your Account gives you SuperAdmin access to your Teams and Projects on Directus
 > Cloud, enabling you to create and manage Teams, Team Members, Projects, and Project Billing.
 
-[[toc]]
-
 An Account is your portal to Directus Cloud. You can use it to manage your Teams, Team Members, Projects and
-[billing](/cloud/teams/#manage-billing). To avoid confusion, "User" is the term for user profiles in a Directus Project,
+[billing](/cloud/teams#manage-billing). To avoid confusion, "User" is the term for user profiles in a Directus Project,
 while the terms "Account" and "Team Member" are used in the context of Directus Cloud. _Accounts on Directus Cloud_ and
 _Users in a Directus Project_ are two separate systems.
 
@@ -16,7 +21,7 @@ See the [Overview](/cloud/overview) to learn how Accounts, Teams and Projects in
 
 ![Create Account and Login](https://cdn.directus.io/docs/v9/cloud/accounts/accounts-20220322A/login-page-20220225A.webp)
 
-Creating an Account is easy and free. As we talked about in the [Overview](/cloud/overview/), we've made life easy for
+Creating an Account is easy and free. As we talked about in the [Overview](/cloud/overview), we've made life easy for
 you by giving you the option to create and log in to your free Cloud Account automatically with GitHub. If you don't
 have a GitHub account or prefer not to use this login method, email-and-password login is available, as well. In either
 case, simply go to the [Login Page](https://directus.cloud/login) and follow the prompts.

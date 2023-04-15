@@ -1,3 +1,10 @@
+---
+description:
+  If you're looking for the fastest way to get up-and-running with Directus, this guide will walk you through getting
+  things installed, configured, and modeled.
+readTime: 5 min read
+---
+
 # Quickstart Guide
 
 > If you're looking for the fastest way to get up-and-running with Directus, this guide will walk you through getting
@@ -72,8 +79,8 @@ Simply configure these according to your project's needs.
 
 ::: warning Directus seeds your database
 
-Directus installs a few dozen tables into the database it is linked to; so if you're adding it to a database with
-existing data. However, installation of Directus will not alter the existing data tables.
+Directus installs a few dozen tables into the database it is linked to. However, this will not alter the pre-existing
+data tables.
 
 :::
 
@@ -81,8 +88,8 @@ existing data. However, installation of Directus will not alter the existing dat
 
 With the server running, you're now able to login to your new Directus project and start using it.
 
-Our start command stated that the server started at port `8055`, which means we can navigate to
-[http://localhost:8055](http://localhost:8055) to open Directus in the browser.
+Our start command stated that the server started at port `8055`, which means we can navigate to `http://localhost:8055`
+to open Directus in the browser.
 
 Login using the admin credentials you configured during the installation in Step 1.
 
@@ -97,7 +104,7 @@ to make it your own!
 
 ::: tip More Info on Collections
 
-For a more in-depth guide to setting up Collections, see [Collections](/app/content-collections).
+To learn more, see our documentation [Collections](/app/content/collections).
 
 :::
 
@@ -106,7 +113,7 @@ For a more in-depth guide to setting up Collections, see [Collections](/app/cont
 With the Collection created, it's time to start adding some Fields. Click the **"Create Field"** button, and select
 **"Input"**:
 
-<video autoplay muted loop controls>
+<video autoplay playsinline muted loop controls>
 <source src="https://cdn.directus.io/docs/v9/getting-started/quickstart/quickstart-20220217A/add-field-20220217A.mp4" type="video/mp4" />
 </video>
 
@@ -115,8 +122,7 @@ sticking to the defaults for now. These defaults use the "String" datatype.
 
 ::: tip More Info on Fields
 
-To learn more about the different types of Fields, and all available options, see
-[Fields](/getting-started/glossary/#fields).
+To learn more, see our documentation on [Fields](/getting-started/glossary#fields).
 
 :::
 
@@ -133,7 +139,7 @@ database.
 
 ::: tip More Info on Items
 
-To learn more about the different types of Items, and all available options, see [Items](/app/content-items/).
+To learn more, see our documentation on [Items](/app/content/items).
 
 :::
 
@@ -163,8 +169,8 @@ Now that your project has some content in it, it's time to start using this cont
 a number of ways, including the REST API, GraphQL, the CLI, or even straight from the database. In this case, we'll use
 [the `/items/` REST API endpoint](/reference/items) to retrieve the item we just created.
 
-Using your browser, or an API tool like [Postman](http://postman.com) or [Paw](https://paw.cloud), open
-[http://localhost:8055/items/articles](http://localhost:8055/items/articles).
+Use your browser or an API tool like [Postman](http://postman.com) or [Paw](https://paw.cloud) to open
+`http://localhost:8055/items/articles`.
 
 And there it is! The Article Item you just created is being served in beautiful JSON, ready to be used anywhere and
 everywhere!

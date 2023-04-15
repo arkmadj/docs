@@ -1,3 +1,10 @@
+---
+description:
+  Directus can be installed in many different ways and on several different stacks. You can choose between local,
+  self-hosted on-premises, or our managed Cloud solution.
+readTime: 2 min read
+---
+
 # Installation
 
 > Directus can be installed in many different ways and on several different stacks. You can choose between local,
@@ -6,9 +13,9 @@
 While our CLI is the recommended method for self-hosting, you can use whichever of these self-hosted options best suits
 your needs. These methods offer a high level of customization and are ideal for intermediate developers.
 
-- [Command Line Interface (CLI)](/self-hosted/installation/cli/)
-- [Docker](/self-hosted/installation/docker/)
-- [Manually](/self-hosted/installation/manual/)
+- [Command Line Interface (CLI)](/self-hosted/installation/cli)
+- [Docker](/self-hosted/installation/docker)
+- [Manually](/self-hosted/installation/manual)
 
 ::: tip Development Environment
 
@@ -22,7 +29,7 @@ The following guides will walk you through the self-hosted installation process 
 These options are only recommended for developers familiar with these services and comfortable with more advanced setup.
 While Directus is always completely free, you will likely need to pay for these services.
 
-- [Generic Ubuntu](/self-hosted/installation/ubuntu/)
+- [Generic Ubuntu](/self-hosted/installation/ubuntu)
 - [Internet Information Services (IIS)](/self-hosted/installation/iis)
 - [Amazon AWS](/self-hosted/installation/aws)
 - [Google Cloud Platform](/self-hosted/installation/gcp)
@@ -42,7 +49,8 @@ services.
 - [Platform.sh](https://console.platform.sh/projects/create-project?template=https%3A%2F%2Fraw.githubusercontent.com%2Fplatformsh%2Ftemplate-builder%2Fmaster%2Ftemplates%2Fdirectus%2F.platform.template.yaml)
 - [Zeet](https://deploy.zeet.co/?url=https://github.com/directus-community/heroku-template)
 - [Koyeb](https://app.koyeb.com/deploy?type=docker&name=directus&ports=8055;http;/&env[PORT]=8055&env[KEY]=A%20random%20string&env[SECRET]=A%20random%20string&env[PUBLIC_URL]=https://myURL.com/&env[DB_CLIENT]=DB%20client&env[DB_HOST]=DB%20host&env[DB_PORT]=DB%20Port&env[DB_DATABASE]=Database%20name&env[DB_USER]=DB%20user&env[DB_PASSWORD]=DB%20Password&image=directus/directus)
-- [alwaysdata](https://www.alwaysdata.com/en/marketplace/directus/)
+- [alwaysdata](https://www.alwaysdata.com/en/marketplace/directus)
+- [Elestio](https://elest.io/open-source/directus)
 
 ## Directus Cloud
 
@@ -50,6 +58,6 @@ In addition to the self-hosted options above, you can also choose to create Dire
 Cloud Service. This is the easiest way to get up-and-running with Directus — even for non-technical users. Unique
 features include dedicated hardware, automatic updates, automatic backups, usage-based pricing, and more.
 
-- [Directus Cloud Dashboard](http://directus.cloud/)
-- [Learn more about On-Demand Cloud](https://directus.io/on-demand-cloud/)
-- [Learn more about Enterprise Cloud](https://directus.io/enterprise-cloud/)
+- [Directus Cloud Dashboard](http://directus.cloud)
+- [Learn more about On-Demand Cloud](https://directus.io/on-demand-cloud)
+- [Learn more about Enterprise Cloud](https://directus.io/enterprise-cloud)

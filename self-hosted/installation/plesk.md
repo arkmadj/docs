@@ -1,3 +1,8 @@
+---
+description: How to host Directus on Plesk
+readTime: 4 min read
+---
+
 # Shared Hosting with Plesk
 
 On many shared hosts you are not allowed to directly invoke node commands but you have to use the Plesk configuration
@@ -14,18 +19,18 @@ This approach has successfully been tested with a webhosting offer from netcup.
 
 ### 1. Setup database
 
-First, make sure that you've already created a database and a user for it. We will use MySQL in this guide. If you
-plan to use SQLite you can ignore this step.
+First, make sure that you've already created a database and a user for it. We will use MySQL in this guide. If you plan
+to use SQLite you can ignore this step.
 
 ### 2. Setup a project folder
 
-Next you will need to create a project folder, we will be adding 4 files to this folder. 
+Next you will need to create a project folder, we will be adding 4 files to this folder.
 
 ### 3. Add .env file
 
 This file is used to configure Directus. Normally, the `init` script would create it for us. So now we have to do it
 manually. You can just copy it from another Directus installation or add the relevant variables using this help page:
-[Environment Variables](/self-hosted/config-options/)).
+[Environment Variables](/self-hosted/config-options)).
 
 If you have not already a user in the database make sure to add a first user by adding the following two lines so that
 you can later login to Directus.
@@ -37,7 +42,7 @@ ADMIN_PASSWORD="password"
 
 ::: tip Choosing a Port
 
-Since Plesk uses the [Phusion Passenger](https://www.phusionpassenger.com/) application server to serve Node.js apps you
+Since Plesk uses the [Phusion Passenger](https://www.phusionpassenger.com) application server to serve Node.js apps you
 do not need to worry about choosing a specific port. Just use an arbitrary number. To quote the Passenger docs:
 
 > When run in Passenger, the port number that you pass to listen() is irrelevant and has no effect. Passenger always
@@ -84,12 +89,12 @@ scripts-prepend-node-path=true
 
 Lastly, we need to add a `document_root` folder inside our project-directory.
 
-It's required by plesk that the document root must be a subdirectory of the application root directory. The folder can
+It's required by Plesk that the document root must be a subdirectory of the application root directory. The folder can
 stay empty.
 
 ::: tip Store `document_root` in a version control
 
-If you want to keep the folder in in a version control like git, create a empty `.gitignore` file inside the folder.
+To maintain the folder with version control (e.g., git), be sure to create an empty `.gitignore` file inside the folder.
 
 :::
 
@@ -100,7 +105,7 @@ In Plesk, choose your website and click "Node.js". You should then see a button 
 Now, change the "Document root" and "Application root" to the location of your project folder. "Application startup
 file" must point to the `index.js` file from the former step. The screen should now look like this:
 
-![Plesk Screenshot](../../assets/guides/installation/plesk-screenshot.png)
+![Plesk Screenshot](https://cdn.directus.io/docs/v9/self-hosted/installation/plesk/plesk-screenshot-20220810A.webp)
 
 You can now install the dependencies by clicking on the button "NPM install".
 
@@ -128,7 +133,8 @@ Afterwards try `bootstrap` again.
 
 ### 10. Clean up .env file
 
-It is good security practice not to leave emails and passwords stored in plain text, so if you had to create login details through the .env file you should now remove those details from the file.
+It is good security practice not to leave emails and passwords stored in plain text, so if you had to create login
+details through the .env file you should now remove those details from the file.
 
 ### 11. Test Directus Access
 
@@ -137,7 +143,7 @@ of seconds.
 
 ## Using snapshots
 
-On Plesk you can't directly run an npx command. To use the Directus snapshot feature, you'd need to add a script to your
+On Plesk you can't directly run a npx command. To use the Directus snapshot feature, you'd need to add a script to your
 `package.json`. For snapshot creation you can find an example in the
 [CLI docs: Date-based snapshots](/self-hosted/installation/plesk#snapshot-the-data-model)
 
@@ -151,7 +157,7 @@ To apply a snapshot you need a custom wrapper using the non-interactive version:
 
 ```
 
-After that you can apply a snapshot by entering the following command to plesk:
+After that you can apply a snapshot by entering the following command to Plesk:
 
 ```sh
 apply-snapshot--noninteractive --filename=[file.yaml]

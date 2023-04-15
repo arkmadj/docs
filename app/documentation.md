@@ -1,3 +1,10 @@
+---
+description:
+  An internal set of guides and docs for the installed version of the platform, including an API Reference that is
+  dynamically tailored to your custom schema.
+readTime: 2 min read
+---
+
 # Documentation
 
 > An internal set of guides and docs for the installed version of the platform, including an API Reference that is

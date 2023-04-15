@@ -1,7 +1,12 @@
+---
+description: A guide on how to build custom Interfaces in Directus.
+readTime: 4 min read
+---
+
 # Custom Interfaces <small></small>
 
 > Custom Interfaces allow you to create new ways of viewing or interacting with field data on the Item Detail page.
-> [Learn more about Interfaces](/getting-started/glossary/#interfaces).
+> [Learn more about Interfaces](/getting-started/glossary#interfaces).
 
 ## Extension Entrypoint
 
@@ -29,13 +34,13 @@ export default {
 
 - `id` — The unique key for this interface. It is good practice to scope proprietary interfaces with an author prefix.
 - `name` — The human-readable name for this interface.
-- `icon` — An icon name from the [material icon set](/getting-started/glossary/#material-icons), or the extended list of
+- `icon` — An icon name from the [material icon set](/getting-started/glossary#material-icons), or the extended list of
   Directus custom icons.
 - `description` — A short description (<80 characters) of this interface shown in the App.
 - `component` — A reference to your interface component.
 - `options` — The options of your interface. Can be either an options object or a dedicated Vue component.
-- `types` — An array of supported [types](/getting-started/glossary/#types).
-- `groups` — An array of field-groups. Accepts `standard`, `file`, `files`, `m2o`, `o2m`, `m2a`, `translations`.
+- `types` — An array of supported [types](/getting-started/glossary#types).
+- `groups` — An array of field-groups. Accepts `standard`, `file`, `files`, `M2O`, `O2M`, `M2A`, `translations`.
   Defaults to `standard`.
 - `relational` — A boolean that indicates if this interface is a relational interface.
 - `recommendedDisplays` — An array of display names which are recommended to be used with this interface.

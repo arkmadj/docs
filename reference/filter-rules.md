@@ -1,9 +1,12 @@
+---
+description: REST and GraphQL API documentation for filter rules in Directus.
+readTime: 5 min read
+---
+
 # Filter Rules
 
 > Permissions, validation, and the API's `filter` parameter all rely on a specific JSON structure to define their rules.
 > This page describes the syntax for creating flat, relational, or complex filter rules.
-
-[[toc]]
 
 ## Syntax
 
@@ -98,6 +101,23 @@ you can set a rule for the `author.name` field using the following syntax.
 }
 ```
 
+When using M2M relationships, a junction table will be created and the filter applies to the junction table itself. For
+example, if you have a `books` collection, with a M2M relationship to authors of each book, the junction collection will
+probably be named `books_authors` and have 3 fields : `id`, `books_id` and `authors_id`. To filter specific books
+depending on their authors you must go through the junction table and the `authors_id` field :
+
+```json
+{
+	"authors": {
+		"authors_id": {
+			"name": {
+				"_eq": "Rijk van Zanten"
+			}
+		}
+	}
+}
+```
+
 ## Logical Operators
 
 You can nest or group multiple rules using the `_and` or `_or` logical operators. Each logical operator holds an array
@@ -182,7 +202,7 @@ In addition to static values, you can also filter against _dynamic_ values using
 
 :::tip Functions
 
-You can also use [Function Parameters](/reference/query/#functions) when building Filters.
+You can also use [Function Parameters](/reference/query#functions) when building Filters.
 
 :::
 

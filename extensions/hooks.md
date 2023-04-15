@@ -1,3 +1,8 @@
+---
+description: A guide on how to build custom hooks in Directus.
+readTime: 7 min read
+---
+
 # Custom API Hooks <small></small>
 
 > Custom API Hooks allow running custom logic when a specified event occurs within your project. There are different
@@ -103,7 +108,7 @@ The context object has the following properties:
 
 ### Init
 
-Init hooks execute at a defined point within the lifecycle of Directus. Use init hook objects to inject logic into
+Init hooks execute at a defined point within the life cycle of Directus. Use init hook objects to inject logic into
 internal services.
 
 The init register function receives two parameters:
@@ -241,10 +246,10 @@ export default ({ filter }, { services, exceptions }) => {
 	const { ServiceUnavailableException, ForbiddenException } = exceptions;
 
 	// Sync with external recipes service, cancel creation on failure
-	filter('items.create', async (input, { collection }, { schema }) => {
+	filter('items.create', async (input, { collection }, { schema, database }) => {
 		if (collection !== 'recipes') return input;
 
-		const mailService = new MailService({ schema });
+		const mailService = new MailService({ schema, knex: database });
 
 		try {
 			await axios.post('https://example.com/recipes', input);

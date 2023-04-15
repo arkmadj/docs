@@ -1,3 +1,8 @@
+---
+description: How to host Directus on IIS
+readTime: 2 min read
+---
+
 # IIS (Internet Information Services)
 
 Deploying directus to IIS will require [iisnode](https://github.com/Azure/iisnode), the IIS URL Rewrite module, an

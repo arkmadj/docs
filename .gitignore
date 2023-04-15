@@ -3,4 +3,7 @@ index.json
 package-lock.json
 .vscode
 .DS_Store
+.vs
 node_modules
+.netlify
+.temp

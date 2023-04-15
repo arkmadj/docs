@@ -1,3 +1,8 @@
+---
+description: What you can do to support Directus.
+readTime: 4 min read
+---
+
 # Backing Directus
 
 > Directus is both _premium_ and _free_ — two things that don't often go together. It takes significant resources to
@@ -36,7 +41,7 @@ The following popular rating platforms allow you to post your rating and testimo
 it more exposure.
 
 - [G2](https://www.g2.com/products/directus/reviews)
-- [Capterra](https://www.capterra.com/p/156619/Directus/)
+- [Capterra](https://www.capterra.com/p/156619/Directus)
 - [TrustRadius](https://www.trustradius.com/products/directus/reviews)
 - [Product Hunt](https://www.producthunt.com/posts/directus-9)
 
@@ -63,7 +68,7 @@ If you find an issue in Directus, no matter how small, we'd love to hear about i
 platform stability. [Report a bug on GitHub](https://github.com/directus/directus/issues/new)
 
 **App Translations**\
-Every button, element, or other line of text in the app is [fully translatable](/contributing/translations/). These translations
+Every button, element, or other line of text in the app is [fully translatable](/contributing/translations). These translations
 make our app an international platform. Our [Crowdin integration](https://locales.directus.io) makes polishing existing translations
 or creating new ones a breeze.
 
@@ -74,11 +79,11 @@ many expenses. Here are a few support avenues that help us keep the lights on.**
 
 **Premium Support**\
 _Software engineering is hard!_ Let our Core Team help you better manage your Directus project with a dedicated Premium Support
-agreement so your devs can focus on your app's core business logic. [Contact the Team](https://directus.io/contact/) for
-more info.
+agreement so your devs can focus on your app's core business logic. [Contact the Team](https://directus.io/contact) for more
+info.
 
 **Sponsored Work**\
-[Commissioned Features](/getting-started/support/#commissioned-features) and [Expedited Fixes](/getting-started/support/#expedited-fixes)
+[Commissioned Features](/getting-started/support#commissioned-features) and [Expedited Fixes](/getting-started/support#expedited-fixes)
 are great ways to financially support the development of Directus and improve the codebase for the community _and for your
 project!_
 
@@ -86,18 +91,18 @@ project!_
 Cloud architecture, software updates, and configuration optimizations require fully dedicated effort. Cut through all that
 digital red-tape and run your projects on [Directus Cloud](/cloud/overview). You get production-ready projects with zero
 vendor lock-in, 90 second average build times, incredibly fair pricing, scaling at the click of a button, automatic updates
-with no downtime and a constant stream of new [Cloud Exclusive Extensions](/cloud/glossary/#extensions).
+with no downtime and a constant stream of new [Cloud Exclusive Extensions](/cloud/glossary#extensions).
 
 We do everything we can to make hosting on [Directus Cloud](/cloud/overview) a no-brainer.
 
 :::tip Ready to try out Cloud?
 
-Test out Directus Cloud now for free with the [Quickstart Guide](/getting-started/quickstart/).
+Test out Directus Cloud now for free with the [Quickstart Guide](/getting-started/quickstart).
 
 :::
 
 :::tip Enterprise Cloud
 
-Need total customization, unlimited scalability, and dedicated support? [Contact us](https://directus.io/contact/)
+Need total customization, unlimited scalability, and dedicated support? [Contact us](https://directus.io/contact)
 
 :::

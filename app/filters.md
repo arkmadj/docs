@@ -1,3 +1,11 @@
+---
+description:
+  Filters allow you to conditionally select Items from a Collection. Use-cases include customizing Item search results
+  restricting Item access permissions for specific Users or Roles, building dashboard analytics with the Insights
+  module, and more.
+readTime: 5 min read
+---
+
 # Filters
 
 > Filters allow you to conditionally select Items from a Collection. Use-cases include customizing Item search results,
@@ -6,12 +14,10 @@
 
 ![Filters](https://cdn.directus.io/docs/v9/app-guide/filters/filters-20220303A/filters-20220303A.webp)
 
-[[toc]]
-
 ::: warning There Are Two Filters Documents
 
 This page is a non-technical guide to using Filters. For more technical info, see
-[Filter-Rules](/reference/filter-rules/).
+[Filter-Rules](/reference/filter-rules).
 
 :::
 
@@ -20,16 +26,16 @@ This page is a non-technical guide to using Filters. For more technical info, se
 ::: tip Assumed Knowledge
 
 Filters are intuitive to use, but get quite nuanced as complexity increases. In order to use Filters effectively, you
-will need to understand the Field _(aka [data model](/configuration/data-model/))_ being filtered as well as any
-relevant [Users, Roles and Permissions](/configuration/users-roles-permissions.md).
+will need to understand the Field _(aka [data model](/configuration/data-model))_ being filtered as well as any relevant
+[Users, Roles and Permissions](/configuration/users-roles-permissions.md).
 
 :::
 
 A basic filter is composed of 3 parts: A **Field** from the Collection being Filtered, a logical
-[Operator](/reference/filter-rules/#filter-operators), and some specified **Value** to filter for within each Item's
+[Operator](/reference/filter-rules#filter-operators), and some specified **Value** to filter for within each Item's
 Field.
 
-<video autoplay muted loop controls title="How Filters Work">
+<video autoplay playsinline muted loop controls title="How Filters Work">
 	<source src="https://cdn.directus.io/docs/v9/app-guide/filters/filters-20220303A/how-filters-work-20220303A.mp4" type="video/mp4" />
 </video>
 
@@ -47,7 +53,7 @@ From here, you can set multiple Filters at once, filter by
 The Field type will determine the kinds of Operators that can be used on it. In fact, some Fields cannot be filtered at
 all (read more in [Unfilterable Fields](#unfilterable-fields)). Once a Field is selected, the permitted operators will
 automatically display. An exhaustive list of Operators and what they do can be found in the more technical
-[Filter Rules](/reference/filter-rules/#filter-operators) document.
+[Filter Rules](/reference/filter-rules#filter-operators) document.
 
 :::
 
@@ -79,13 +85,13 @@ conditions inside of OR Groups.
 
 The following video shows how to filter for Blog posts written within the past 60 days.
 
-<video autoplay muted loop controls title="How Filters Work">
+<video autoplay playsinline muted loop controls title="How Filters Work">
 	<source src="https://cdn.directus.io/docs/v9/app-guide/filters/filters-20220303A/dynamic-variables-20220307A.mp4" type="video/mp4" />
 </video>
 
 The following Dynamic Variables are built into Directus to make Filtering easier: `$CURRENT_USER`, `$CURRENT_ROLE`,
 `$NOW` and `$NOW(<adjustment>)`. For more information, please see the Dynamic Variables section in
-[Filter Rules](/reference/filter-rules/).
+[Filter Rules](/reference/filter-rules).
 
 ## Filtering by Related Collections
 
@@ -101,12 +107,12 @@ bought rock songs, where the `customers` and `genres` Collections are linked by 
 `invoice-items` -> `tracks` -> `genres`.
 
 You will notice a <span mi icon>chevron_right</span> icon beside relational Fields. When you click on any
-[Alias](/getting-started/glossary/#alias) Field, all the Fields for that associated Collection pop down. If you select
+[Alias](/getting-started/glossary#alias) Field, all the Fields for that associated Collection pop down. If you select
 one of these Fields, you can run Filters on the current Collection by Field values in a related Collection.
 
 Here are step-by-step instructions on how to filter by Fields in other Collections:
 
-<video autoplay muted loop controls title="How Filters Work">
+<video autoplay playsinline muted loop controls title="How Filters Work">
 	<source src="https://cdn.directus.io/docs/v9/app-guide/filters/filters-20220303A/filtering-by-related-collections-20220303A.mp4" type="video/mp4" />
 </video>
 
@@ -129,15 +135,15 @@ Filters.
 Directus Core is completely open-source, modular and extensible. Extensions allow you to expand or modify any part of
 Directus to fit your needs. Here are some great resources to get started down that track.
 
-- [Extensions > Introduction](/extensions/introduction/)
-- [Extensions > Creating Extensions](/extensions/creating-extensions/)
-- [Contributing > Introduction](/contributing/introduction/)
-- [Contributing > Codebase Overview](/contributing/codebase-overview/)
+- [Extensions > Introduction](/extensions/introduction)
+- [Extensions > Creating Extensions](/extensions/creating-extensions)
+- [Contributing > Introduction](/contributing/introduction)
+- [Contributing > Codebase Overview](/contributing/codebase-overview)
 
 ::: tip Accelerated Development
 
 Working on an enterprise project and looking to outsource or financially sponsor the development of a Shares extension?
-Contact [our team](https://directus.io/contact/)
+Contact [our team](https://directus.io/contact)
 
 :::
 

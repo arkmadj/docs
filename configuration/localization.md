@@ -1,6 +1,6 @@
 # Localization
 
-> TK
+>
 
 ## Content Translations
 
@@ -8,4 +8,4 @@
 
 ## Iconography
 
-## RTL Support
+## R.T.L. Support

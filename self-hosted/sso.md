@@ -1,3 +1,8 @@
+---
+description: Single Sign-On is a mechanism which allows to use external providers to login into systems.
+readTime: 4 min read
+---
+
 # Single Sign-On (SSO)
 
 Single Sign-On is a mechanism which allows to use external providers to login into systems. For example, you can use
@@ -12,7 +17,7 @@ Directus supports three standard types of SSO mechanisms:
 - [OAuth 2.0](https://www.ietf.org/rfc/rfc6750.txt)
 - [LDAP](https://datatracker.ietf.org/doc/html/rfc4511)
 
-Here are the configuration allowed for each one: [SSO configuration](/self-hosted/config-options/#sso-oauth2-and-openid)
+Here are the configuration allowed for each one: [SSO configuration](/self-hosted/config-options#sso-oauth2-and-openid)
 
 In order to use these mechanisms you need to:
 
@@ -28,7 +33,7 @@ In this section, we provide some guides to help you set up SSO with OpenID.
 
 To be able to use Google OpenID as your external provider you will need to:
 
-1. Go into [Google Cloud Console](https://console.cloud.google.com/)
+1. Go into [Google Cloud Console](https://console.cloud.google.com)
 2. Select or Create a new project
 3. Go to [APIs & Services -> OAuth consent screen](https://console.cloud.google.com/apis/credentials/consent) on side
    bar

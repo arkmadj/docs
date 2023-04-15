@@ -1,21 +1,12 @@
 ---
+description: REST and GraphQL API documentation on the Utilities collection in Directus.
+readTime: 3 min read
 pageClass: page-reference
 ---
 
 # Utilities
 
-<div class="two-up">
-<div class="left">
-
 > Utilities are the various helper endpoints located within the API.
-
-</div>
-<div class="right">
-
-[[toc]]
-
-</div>
-</div>
 
 ---
 
@@ -23,24 +14,14 @@ pageClass: page-reference
 
 Generate a hash for a given string.
 
-<div class="two-up">
-<div class="left">
-
 ### Request Body
-
-<div class="definitions">
 
 `string` **Required**\
 String to hash.
 
-</div>
-
 ### Returns
 
 Hashed string.
-
-</div>
-<div class="right">
 
 ### REST API
 
@@ -78,21 +59,13 @@ mutation {
 }
 ```
 
-</div>
-</div>
-
 ---
 
 ## Verify a Hash
 
 Verify a string with a hash.
 
-<div class="two-up">
-<div class="left">
-
 ### Request Body
-
-<div class="definitions">
 
 `string` **Required**\
 Source string.
@@ -100,14 +73,9 @@ Source string.
 `hash` **Required**\
 Hash you want to verify against.
 
-</div>
-
 ### Returns
 
 Boolean.
-
-</div>
-<div class="right">
 
 ### REST API
 
@@ -138,21 +106,13 @@ type Mutation {
 }
 ```
 
-</div>
-</div>
-
 ---
 
 ## Manually Sort Items in Collection
 
 If a collection has a sort field, this util can be used to move items in that manual order.
 
-<div class="two-up">
-<div class="left">
-
 ### Request Body
-
-<div class="definitions">
 
 `item` **Required**\
 Primary key of the item you're moving in the collection.
@@ -160,14 +120,9 @@ Primary key of the item you're moving in the collection.
 `to` **Required**\
 Primary key of the item you're moving the source item too.
 
-</div>
-
 ### Returns
 
 Empty body.
-
-</div>
-<div class="right">
 
 ### REST API
 
@@ -206,33 +161,24 @@ mutation {
 }
 ```
 
-</div>
-</div>
-
 ---
 
 ## Import Data from File
 
 Import multiple records from a JSON or CSV file into a collection. Relies on a `multipart/form-data` encoded request,
-just like regular file uploads. Check [Upload a File](/reference/files/#upload-a-file) for more information.
+just like regular file uploads. Check [Upload a File](/reference/files#upload-a-file) for more information.
 
-The import endpoint expects the file structure to match [the export query parameter](/reference/query/#export). For
-JSON, this is an array of objects, where every object is an item. For CSV, the first line has to be the columns header.
-
-<div class="two-up">
-<div class="left">
+The import endpoint expects the file structure to match [the export query parameter](/reference/query#export). For JSON,
+this is an array of objects, where every object is an item. For CSV, the first line has to be the columns header.
 
 ### Request Body
 
-Send the file in a `multipart/form-data` request. See [Upload a File](/reference/files/#upload-a-file) for more
+Send the file in a `multipart/form-data` request. See [Upload a File](/reference/files#upload-a-file) for more
 information.
 
 ### Returns
 
 Empty body.
-
-</div>
-<div class="right">
 
 ### REST API
 
@@ -265,25 +211,17 @@ Content-Type: text/csv
 
 n/a
 
-</div>
-</div>
-
 ---
 
 ## Export Data to a File
 
 Export a larger data set to a file in the File Library
 
-<div class="two-up">
-<div class="left">
-
 ### Query Parameters
 
 Doesn't use any query parameters.
 
 ### Request Body
-
-<div class="definitions">
 
 `format` **Required**\
 What file format to save the export to. One of `csv`, `xml`, `json`.
@@ -294,14 +232,9 @@ The query object to use for the export. Supports the [global query parameters](/
 `file` **File Object**\
 Partial file object to tweak where / how the export file is saved.
 
-</div>
-
 ### Returns
 
 Empty body
-
-</div>
-<div class="right">
 
 ### REST API
 
@@ -334,17 +267,11 @@ POST /utils/export/articles
 
 n/a
 
-</div>
-</div>
-
 ---
 
 ## Clear the Internal Cache
 
 Resets both the data and schema cache of Directus. This endpoint is only available to admin users.
-
-<div class="two-up">
-<div class="left">
 
 ### Request Body
 
@@ -353,9 +280,6 @@ n/a
 ### Returns
 
 Empty body
-
-</div>
-<div class="right">
 
 ### REST API
 
@@ -370,6 +294,3 @@ mutation {
 	utils_cache_clear
 }
 ```
-
-</div>
-</div>

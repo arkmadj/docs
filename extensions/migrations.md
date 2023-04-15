@@ -1,3 +1,8 @@
+---
+description: A guide on how to setup your owns custom Migrations in Directus.
+readTime: 2 min read
+---
+
 # Custom Migrations
 
 > Directus allows adding custom migration files that run whenever the `directus database migrate:*` commands are

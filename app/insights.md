@@ -1,18 +1,21 @@
+---
+description: Insights is a Module in Directus that allows rapid, no-code build-out of analytics dashboards.
+readTime: 9 min read
+---
+
 # Insights
 
-> Insights is a Module in Directus that allows rapid, no-code buildout of analytics dashboards. Regardless of your
+> Insights is a Module in Directus that allows rapid, no-code build-out of analytics dashboards. Regardless of your
 > use-case _(be it business intelligence, user progress tracking, web traffic conversions, or whatever!)_ you will be
 > able to setup key data metrics in just a few clicks.
 
-<video autoplay muted loop controls>
+<video autoplay playsinline muted loop controls>
 <source src="https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/insights-dashboards-20220216A.mp4" type="video/mp4" />
 </video>
 
-[[toc]]
-
 ## How it Works
 
-<video autoplay muted loop controls>
+<video autoplay playsinline muted loop controls>
 <source src="https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/insights-how-it-works-20220216A_1.mp4" type="video/mp4" />
 </video>
 
@@ -36,12 +39,12 @@ Each Directus Dashboard provides a drag-and-drop canvas where you can create and
 build out customized analytics. The Dashboard area automatically expands as you add more and more Panels. In theory, a
 Dashboard area can expand infinitely large... but in practice, users will probably only want to build Dashboards as
 large as the screen they will be viewing on. You are able to create as many Dashboards as you need. Additionally, the
-Dashboard view, edit, and create permissions are [fully configurable](/configuration/users-roles-permissions/) by User
+Dashboard view, edit, and create permissions are [fully configurable](/configuration/users-roles-permissions) by User
 Role.
 
 :::tip Auto Refresh
 
-The Auto Refresh menu in the [Sidebar](/app/overview/#_4-sidebar) lets you select an interval to refresh dashboard data.
+The Auto Refresh menu in the [Sidebar](/app/overview#_4-sidebar) lets you select an interval to refresh dashboard data.
 
 :::
 
@@ -150,7 +153,7 @@ grayed out and unselectable in the `field dropdown list`.
 
 ### Style and Format Options
 
-- **Abbreviate Value** – Abbreviates large numbers with a letter _(e.g. 2,000 = 2k)_.
+- **Abbreviate Value** – Abbreviates large numbers with a letter _(e.g. 2,000 = 2K)_.
 - **Decimals** – Changes the number of decimals displayed.
 - **Prefix** – Adds text before the aggregate metric.
 - **Suffix** – Adds text after the aggregate metric.

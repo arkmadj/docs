@@ -1,10 +1,16 @@
+---
+description:
+  When a Flow is triggered, it executes its chain of Operations, enabling you to do things like manage data within
+  Directus, transform the Flow's data, send information off to outside services, set conditional logic, trigger other
+  Flows, and beyond!
+readTime: 5 min read
+---
+
 # Operations
 
-> When a Flow is triggered, it performs an Operation. Whether you need to manage data within Directus, send information
-> off to outside services, set conditional logic or even trigger other Flows, these simple but powerful Operations can
-> make it happen.
-
-[[toc]]
+> When a Flow is triggered, it executes its chain of Operations, enabling you to do things like manage data within
+> Directus, transform the Flow's data, send information off to outside services, set conditional logic, trigger other
+> Flows, _and beyond!_
 
 :::tip Before You Begin
 
@@ -31,7 +37,7 @@ This Operation creates Item(s) in a Collection.
 - **Collection** — Use the dropdown menu to select the Collection you'd like to create Items in.
 - **Permissions** — Select the scope of permissions used for this Operation.
 - **Emit Events** — Toggle whether the event is emitted.
-- **Payload** — Create Item(s) in a Collection. To learn more, see [API > Items](/reference/items/).
+- **Payload** — Create Item(s) in a Collection. To learn more, see [API > Items](/reference/items).
 
 :::tip
 
@@ -80,17 +86,17 @@ select the Items you wish to update.
 - **Permissions** — Set the Role that this Operation will inherit permissions from.
 - **Collections** — Select the Collection from which you'd like to read Items.
 - **IDs** — Input the ID for Item(s) you wish to read and press enter. Click the ID to remove.
-- **Payload** — Update Items in a Collection. To learn more, see [API > Items](reference/items/).
+- **Payload** — Update Items in a Collection. To learn more, see [API > Items](/reference/items).
 - **Query** — Select Items to update with a query. To learn more, see [Filter Rules](/reference/filter-rules).
 
 ## Log to Console
 
 ![Log to Console](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/log-to-console-20220603A.webp)
 
-This Operation outputs something to the server-side console as well as the [Log Panel](/configuration/flows/#logs). This
+This Operation outputs something to the server-side console as well as the [Log Panel](/configuration/flows#logs). This
 is a key tool for troubleshooting Flow configuration.
 
-- **Message** — Sets a [log message](/configuration/flows/#logs).
+- **Message** — Sets a [log message](/configuration/flows#logs).
 
 ## Send Email
 
@@ -116,15 +122,15 @@ provider may send it there automatically.
 
 This Operation sends a notification to an app user.
 
-- **Users** — Define a User by their primary key UUID. Use [Flow keys](/configuration/flows/flows/#the-flow-object) to
-  set this dynamically.
+- **Users** — Define a User by their primary key UUID. Use [Flow keys](/configuration/flows#the-flow-object) to set this
+  dynamically.
 - **Permissions** — Define the Role that this Operation will inherit permissions from.
 - **Title** — Set the notification title.
 - **Message** — Set the main body of the notification.
 
 ## Webhook / Request URL
 
-![Webhok / Request URL](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/webhook-20220603A.webp)
+![Webhook / Request URL](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/webhook-20220603A.webp)
 
 This Operation makes a request to another URL.
 
@@ -147,9 +153,9 @@ Operation.
 ![Transform Payload](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/transform-payload-20220603A.webp)
 
 Transform Payload simply creates a new key on the Flow Object with nested JSON data to provide a clean space where you
-can combine data from multiple Flow keys into a single object. For example, if you need to use the same data multiple
-times _(e.g. send it in a web request and also use it to create an Item in a Collection)_, you can combine the data with
-Transform Payload once, then access its Operation key repeatedly.
+can combine data from multiple [Flow keys](/configuration/flows#the-flow-object) into a single object. For example, if
+you need to use the same data multiple times _(e.g. send it in a web request and also use it to create an Item in a
+Collection)_, you can combine the data with Transform Payload once, then access its Operation key repeatedly.
 
 - **JSON** — Define JSON to insert into the Flow Object.
 
@@ -158,7 +164,7 @@ Transform Payload once, then access its Operation key repeatedly.
 ![Trigger Flow](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/trigger-flow-20220603A.webp)
 
 This Operation starts another Flow and passes data to it. It should be used in combination with the
-[Another Flow](/configuration/triggers/#another-flow) Trigger.
+[Another Flow](/configuration/flows/triggers#another-flow) Trigger.
 
 - **Flow** — Define a Flow by its primary key UUID.
 - **Payload** — Define JSON to insert into the Flow Object.

@@ -1,9 +1,14 @@
+---
+description:
+  Environment variables are used for all configuration within a Directus project. These variables can be defined in a
+  number of ways, which we cover below.
+readTime: 28 min read
+---
+
 # Configuration Options
 
 > Environment variables are used for all configuration within a Directus project. These variables can be defined in a
 > number of ways, which we cover below.
-
-[[toc]]
 
 ## Configuration Files
 
@@ -209,7 +214,7 @@ All `LOGGER_*` environment variables are passed to the `options` configuration o
 variables are passed to the `options` configuration of a
 [`Pino-http` instance](https://github.com/pinojs/pino-http#api). Based on your project's needs, you can extend the
 `LOGGER_*` environment variables with any config you need to pass to the logger instance. If a LOGGER_LEVELS key is
-added, these values will be passed to the logger formatter, as described
+added, these values will be passed to the logger frontmatter, as described
 [here](https://github.com/pinojs/pino/blob/master/docs/help.md#mapping-pino-log-levels-to-google-cloud-logging-stackdriver-severity-levels)
 for example. The format for adding LEVELS values is:
 `LOGGER_LEVELS="trace:DEBUG,debug:DEBUG,info:INFO,warn:WARNING,error:ERROR,fatal:CRITICAL"`
@@ -244,7 +249,7 @@ into unexpected behaviors.
 | `DB_PASSWORD`          | Database user's password. **Required** when using `pg`, `mysql`, `oracledb`, or `mssql`.                                                           | --                            |
 | `DB_FILENAME`          | Where to read/write the SQLite database. **Required** when using `sqlite3`.                                                                        | --                            |
 | `DB_CONNECTION_STRING` | When using `pg`, you can submit a connection string instead of individual properties. Using this will ignore any of the other connection settings. | --                            |
-| `DB_POOL_*`            | Pooling settings. Passed on to [the `tarn.js`](https://github.com/vincit/tarn.js#usage) library.                                                   | --                            |
+| `DB_POOL__*`           | Pooling settings. Passed on to [the `tarn.js`](https://github.com/vincit/tarn.js#usage) library.                                                   | --                            |
 | `DB_EXCLUDE_TABLES`    | CSV of tables you want Directus to ignore completely                                                                                               | `spatial_ref_sys,sysdiagrams` |
 | `DB_CHARSET`           | Charset/collation to use in the connection to MySQL/MariaDB                                                                                        | `UTF8_GENERAL_CI`             |
 | `DB_VERSION`           | Database version, in case you use the PostgreSQL adapter to connect a non-standard database. Not normally required.                                | --                            |
@@ -259,8 +264,8 @@ database instance.
 
 ::: tip Pooling
 
-All the `DB_POOL_` prefixed options are passed to [`tarn.js`](https://github.com/vincit/tarn.js#usage) through
-[Knex](http://knexjs.org/#Installation-pooling)
+All the `DB_POOL__` prefixed options are passed to [`tarn.js`](https://github.com/vincit/tarn.js#usage) through
+[Knex](http://knexjs.org#Installation-pooling)
 
 :::
 
@@ -276,8 +281,9 @@ All the `DB_POOL_` prefixed options are passed to [`tarn.js`](https://github.com
 | `REFRESH_TOKEN_COOKIE_SECURE`    | Whether or not to use a secure cookie for the refresh token in cookie mode.                                                                                      | `false`                  |
 | `REFRESH_TOKEN_COOKIE_SAME_SITE` | Value for `sameSite` in the refresh token cookie when in cookie mode.                                                                                            | `lax`                    |
 | `REFRESH_TOKEN_COOKIE_NAME`      | Name of refresh token cookie .                                                                                                                                   | `directus_refresh_token` |
-| `PASSWORD_RESET_URL_ALLOW_LIST`  | List of URLs that can be used [as `reset_url` in /password/request](/reference/authentication/#request-password-reset)                                           | --                       |
-| `USER_INVITE_URL_ALLOW_LIST`     | List of URLs that can be used [as `invite_url` in /users/invite](/reference/system/users/#invite-a-new-user)                                                     | --                       |
+| `LOGIN_STALL_TIME`               | The duration in milliseconds that a login request will be stalled for, and it should be greater than the time taken for a login request with an invalid password | `500`                    |
+| `PASSWORD_RESET_URL_ALLOW_LIST`  | List of URLs that can be used [as `reset_url` in /password/request](/reference/authentication#request-password-reset)                                            | --                       |
+| `USER_INVITE_URL_ALLOW_LIST`     | List of URLs that can be used [as `invite_url` in /users/invite](/reference/system/users#invite-a-new-user)                                                      | --                       |
 | `IP_TRUST_PROXY`                 | Settings for [express' trust proxy setting](https://expressjs.com/en/guide/behind-proxies.html)                                                                  | true                     |
 | `IP_CUSTOM_HEADER`               | What custom request header to use for the IP address                                                                                                             | false                    |
 | `ASSETS_CONTENT_SECURITY_POLICY` | Custom overrides for the Content-Security-Policy header for the /assets endpoint. See [helmet's documentation](https://helmetjs.github.io) for more information. | --                       |
@@ -303,11 +309,11 @@ your project and API on different domains, make sure to verify your configuratio
 | `HASH_TIME_COST`       | The amount of passes (iterations) used by the hash function. It increases hash strength at the cost of time required to compute. | `3`                 |
 | `HASH_PARALLELISM`     | The amount of threads to compute the hash on. Each thread has a memory pool with `HASH_MEMORY_COST` size.                        | `1` (single thread) |
 | `HASH_TYPE`            | The variant of the hash function (`0`: argon2d, `1`: argon2i, or `2`: argon2id).                                                 | `1` (argon2i)       |
-| `HASH_ASSOCIATED_DATA` | An extra and optional non-secret value. The value will be included B64 encoded in the parameters portion of the digest.          | --                  |
+| `HASH_ASSOCIATED_DATA` | An extra and optional non-secret value. The value will be included Base64 encoded in the parameters portion of the digest.       | --                  |
 
 Argon2's hashing function is used by Directus for three purposes: 1) hashing user passwords, 2) generating hashes for
 the `Hash` field type in collections, and 3) the
-[generate a hash API endpoint](/reference/system/utilities/#generate-a-hash).
+[generate a hash API endpoint](/reference/system/utilities#generate-a-hash).
 
 All `HASH_*` environment variable parameters are passed to the `argon2.hash` function. See the
 [node-argon2 library options page](https://github.com/ranisalt/node-argon2/wiki/Options) for reference.
@@ -336,7 +342,7 @@ multiplied. This may cause out of memory errors, especially when running in cont
 
 You can use the built-in rate-limiter to prevent users from hitting the API too much. Simply enabling the rate-limiter
 will set a default maximum of 50 requests per second, tracked in memory. Once you have multiple copies of Directus
-running under a load-balancer, or your user base grows so much that memory is no longer a viable place to store the rate
+running under a load balancer, or your user base grows so much that memory is no longer a viable place to store the rate
 limiter information, you can use an external `memcache` or `redis` instance to store the rate limiter data.
 
 | Variable                | Description                                                                      | Default Value |
@@ -354,9 +360,9 @@ No additional configuration required.
 
 ### Redis
 
-| Variable             | Description                                                           | Default Value |
-| -------------------- | --------------------------------------------------------------------- | ------------- |
-| `RATE_LIMITER_REDIS` | Redis connection string, eg: `redis://:authpassword@127.0.0.1:6380/4` | ---           |
+| Variable             | Description                                                             | Default Value |
+| -------------------- | ----------------------------------------------------------------------- | ------------- |
+| `RATE_LIMITER_REDIS` | Redis connection string, e.g., `redis://:authpassword@127.0.0.1:6380/4` | ---           |
 
 Alternatively, you can provide the individual connection parameters:
 
@@ -368,9 +374,9 @@ Alternatively, you can provide the individual connection parameters:
 
 ### Memcache
 
-| Variable                | Description                                                                                                                                                           | Default Value |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `RATE_LIMITER_MEMCACHE` | Location of your memcache instance. You can use [`array:` syntax](#environment-syntax-prefix), eg: `array:<instance-1>,<instance-2>` for multiple memcache instances. | ---           |
+| Variable                | Description                                                                                                                                                             | Default Value |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `RATE_LIMITER_MEMCACHE` | Location of your memcache instance. You can use [`array:` syntax](#environment-syntax-prefix), e.g., `array:<instance-1>,<instance-2>` for multiple memcache instances. | ---           |
 
 ::: tip Additional Rate Limiter Variables
 
@@ -462,9 +468,9 @@ No additional configuration required.
 
 ### Redis
 
-| Variable      | Description                                                           | Default Value |
-| ------------- | --------------------------------------------------------------------- | ------------- |
-| `CACHE_REDIS` | Redis connection string, eg: `redis://:authpassword@127.0.0.1:6380/4` | ---           |
+| Variable      | Description                                                             | Default Value |
+| ------------- | ----------------------------------------------------------------------- | ------------- |
+| `CACHE_REDIS` | Redis connection string, e.g., `redis://:authpassword@127.0.0.1:6380/4` | ---           |
 
 Alternatively, you can provide the individual connection parameters:
 
@@ -476,9 +482,9 @@ Alternatively, you can provide the individual connection parameters:
 
 ### Memcache
 
-| Variable         | Description                                                                                                                                                           | Default Value |
-| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `CACHE_MEMCACHE` | Location of your memcache instance. You can use [`array:` syntax](#environment-syntax-prefix), eg: `array:<instance-1>,<instance-2>` for multiple memcache instances. | ---           |
+| Variable         | Description                                                                                                                                                             | Default Value |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `CACHE_MEMCACHE` | Location of your memcache instance. You can use [`array:` syntax](#environment-syntax-prefix), e.g., `array:<instance-1>,<instance-2>` for multiple memcache instances. | ---           |
 
 ## File Storage
 
@@ -518,9 +524,9 @@ STORAGE_S3_DRIVER="s3" # Will work, "s3" is uppercased ✅
 
 :::
 
-| Variable            | Description                                                                                                           | Default Value |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------- | ------------- |
-| `STORAGE_LOCATIONS` | A CSV of storage locations (eg: `local,digitalocean,amazon`) to use. You can use any names you'd like for these keys. | `local`       |
+| Variable            | Description                                                                                                             | Default Value |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------- |
+| `STORAGE_LOCATIONS` | A CSV of storage locations (e.g., `local,digitalocean,amazon`) to use. You can use any names you'd like for these keys. | `local`       |
 
 For each of the storage locations listed, you must provide the following configuration:
 
@@ -637,7 +643,7 @@ No additional configuration required.
 Directus' SSO integrations provide powerful alternative ways to authenticate into your project. Directus will ask you to
 login on the external service, and return authenticated with a Directus account linked to that service.
 
-For example, you can login to Directus using a github account by creating an
+For example, you can login to Directus using a GitHub account by creating an
 [OAuth 2.0 app in GitHub](https://github.com/settings/developers) and adding the following configuration to Directus:
 
 ```
@@ -651,7 +657,7 @@ AUTH_GITHUB_ACCESS_URL="https://github.com/login/oauth/access_token"
 AUTH_GITHUB_PROFILE_URL="https://api.github.com/user"
 ```
 
-More example SSO configurations [can be found here](/self-hosted/sso-examples/).
+More example SSO configurations [can be found here](/self-hosted/sso-examples).
 
 ::: warning PUBLIC_URL
 
@@ -661,22 +667,22 @@ These flows rely on the `PUBLIC_URL` variable for redirecting. Ensure the variab
 
 ### OAuth 2.0
 
-| Variable                                    | Description                                                                                    | Default Value    |
-| ------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------- |
-| `AUTH_<PROVIDER>_CLIENT_ID`                 | Client identifier for the OAuth provider.                                                      | --               |
-| `AUTH_<PROVIDER>_CLIENT_SECRET`             | Client secret for the OAuth provider.                                                          | --               |
-| `AUTH_<PROVIDER>_SCOPE`                     | A white-space separated list of permissions to request.                                        | `email`          |
-| `AUTH_<PROVIDER>_AUTHORIZE_URL`             | Authorization page URL of the OAuth provider.                                                  | --               |
-| `AUTH_<PROVIDER>_ACCESS_URL`                | Access token URL of the OAuth provider.                                                        | --               |
-| `AUTH_<PROVIDER>_PROFILE_URL`               | User profile URL of the OAuth provider.                                                        | --               |
-| `AUTH_<PROVIDER>_IDENTIFIER_KEY`            | User profile identifier key <sup>[1]</sup>. Will default to `EMAIL_KEY`.                       | --               |
-| `AUTH_<PROVIDER>_EMAIL_KEY`                 | User profile email key.                                                                        | `email`          |
-| `AUTH_<PROVIDER>_FIRST_NAME_KEY`            | User profile first name key.                                                                   | --               |
-| `AUTH_<PROVIDER>_LAST_NAME_KEY`             | User profile last name key.                                                                    | --               |
-| `AUTH_<PROVIDER>_ALLOW_PUBLIC_REGISTRATION` | Automatically create accounts for authenticating users.                                        | `false`          |
-| `AUTH_<PROVIDER>_DEFAULT_ROLE_ID`           | A Directus role ID to assign created users.                                                    | --               |
-| `AUTH_<PROVIDER>_ICON`                      | SVG icon to display with the login link. [See options here](/getting-started/glossary/#icons). | `account_circle` |
-| `AUTH_<PROVIDER>_PARAMS`                    | Custom query parameters applied to the authorization URL.                                      | --               |
+| Variable                                    | Description                                                                                   | Default Value    |
+| ------------------------------------------- | --------------------------------------------------------------------------------------------- | ---------------- |
+| `AUTH_<PROVIDER>_CLIENT_ID`                 | Client identifier for the OAuth provider.                                                     | --               |
+| `AUTH_<PROVIDER>_CLIENT_SECRET`             | Client secret for the OAuth provider.                                                         | --               |
+| `AUTH_<PROVIDER>_SCOPE`                     | A white-space separated list of permissions to request.                                       | `email`          |
+| `AUTH_<PROVIDER>_AUTHORIZE_URL`             | Authorization page URL of the OAuth provider.                                                 | --               |
+| `AUTH_<PROVIDER>_ACCESS_URL`                | Access token URL of the OAuth provider.                                                       | --               |
+| `AUTH_<PROVIDER>_PROFILE_URL`               | User profile URL of the OAuth provider.                                                       | --               |
+| `AUTH_<PROVIDER>_IDENTIFIER_KEY`            | User profile identifier key <sup>[1]</sup>. Will default to `EMAIL_KEY`.                      | --               |
+| `AUTH_<PROVIDER>_EMAIL_KEY`                 | User profile email key.                                                                       | `email`          |
+| `AUTH_<PROVIDER>_FIRST_NAME_KEY`            | User profile first name key.                                                                  | --               |
+| `AUTH_<PROVIDER>_LAST_NAME_KEY`             | User profile last name key.                                                                   | --               |
+| `AUTH_<PROVIDER>_ALLOW_PUBLIC_REGISTRATION` | Automatically create accounts for authenticating users.                                       | `false`          |
+| `AUTH_<PROVIDER>_DEFAULT_ROLE_ID`           | A Directus role ID to assign created users.                                                   | --               |
+| `AUTH_<PROVIDER>_ICON`                      | SVG icon to display with the login link. [See options here](/getting-started/glossary#icons). | `account_circle` |
+| `AUTH_<PROVIDER>_PARAMS`                    | Custom query parameters applied to the authorization URL.                                     | --               |
 
 <sup>[1]</sup> When authenticating, Directus will match the identifier value from the external user profile to a
 Directus users "External Identifier".
@@ -685,18 +691,18 @@ Directus users "External Identifier".
 
 OpenID is an authentication protocol built on OAuth 2.0, and should be preferred over standard OAuth 2.0 where possible.
 
-| Variable                                    | Description                                                                                    | Default Value          |
-| ------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------- |
-| `AUTH_<PROVIDER>_CLIENT_ID`                 | Client identifier for the external service.                                                    | --                     |
-| `AUTH_<PROVIDER>_CLIENT_SECRET`             | Client secret for the external service.                                                        | --                     |
-| `AUTH_<PROVIDER>_SCOPE`                     | A white-space separated list of permissions to request.                                        | `openid profile email` |
-| `AUTH_<PROVIDER>_ISSUER_URL`                | OpenID `.well-known` discovery document URL of the external service.                           | --                     |
-| `AUTH_<PROVIDER>_IDENTIFIER_KEY`            | User profile identifier key <sup>[1]</sup>.                                                    | `sub`<sup>[2]</sup>    |
-| `AUTH_<PROVIDER>_ALLOW_PUBLIC_REGISTRATION` | Automatically create accounts for authenticating users.                                        | `false`                |
-| `AUTH_<PROVIDER>_REQUIRE_VERIFIED_EMAIL`    | Require created users to have a verified email address.                                        | `false`                |
-| `AUTH_<PROVIDER>_DEFAULT_ROLE_ID`           | A Directus role ID to assign created users.                                                    | --                     |
-| `AUTH_<PROVIDER>_ICON`                      | SVG icon to display with the login link. [See options here](/getting-started/glossary/#icons). | `account_circle`       |
-| `AUTH_<PROVIDER>_PARAMS`                    | Custom query parameters applied to the authorization URL.                                      | --                     |
+| Variable                                    | Description                                                                                   | Default Value          |
+| ------------------------------------------- | --------------------------------------------------------------------------------------------- | ---------------------- |
+| `AUTH_<PROVIDER>_CLIENT_ID`                 | Client identifier for the external service.                                                   | --                     |
+| `AUTH_<PROVIDER>_CLIENT_SECRET`             | Client secret for the external service.                                                       | --                     |
+| `AUTH_<PROVIDER>_SCOPE`                     | A white-space separated list of permissions to request.                                       | `openid profile email` |
+| `AUTH_<PROVIDER>_ISSUER_URL`                | OpenID `.well-known` discovery document URL of the external service.                          | --                     |
+| `AUTH_<PROVIDER>_IDENTIFIER_KEY`            | User profile identifier key <sup>[1]</sup>.                                                   | `sub`<sup>[2]</sup>    |
+| `AUTH_<PROVIDER>_ALLOW_PUBLIC_REGISTRATION` | Automatically create accounts for authenticating users.                                       | `false`                |
+| `AUTH_<PROVIDER>_REQUIRE_VERIFIED_EMAIL`    | Require created users to have a verified email address.                                       | `false`                |
+| `AUTH_<PROVIDER>_DEFAULT_ROLE_ID`           | A Directus role ID to assign created users.                                                   | --                     |
+| `AUTH_<PROVIDER>_ICON`                      | SVG icon to display with the login link. [See options here](/getting-started/glossary#icons). | `account_circle`       |
+| `AUTH_<PROVIDER>_PARAMS`                    | Custom query parameters applied to the authorization URL.                                     | --                     |
 
 <sup>[1]</sup> When authenticating, Directus will match the identifier value from the external user profile to a
 Directus users "External Identifier".
@@ -783,11 +789,11 @@ AUTH_FACEBOOK_ICON="facebook"
 
 ## Messenger
 
-| Variable              | Description                                       | Default Value |
-| --------------------- | ------------------------------------------------- | ------------- |
-| `MESSENGER_STORE`     | One of `memory`, `redis`<sup>[1]</sup>            | `memory`      |
-| `MESSENGER_NAMESPACE` | How to scope the channels in Redis                | `directus`    |
-| `MESSENGER_REDIS_*`   | The Redis configuration for the pubsub connection | --            |
+| Variable              | Description                                        | Default Value |
+| --------------------- | -------------------------------------------------- | ------------- |
+| `MESSENGER_STORE`     | One of `memory`, `redis`<sup>[1]</sup>             | `memory`      |
+| `MESSENGER_NAMESPACE` | How to scope the channels in Redis                 | `directus`    |
+| `MESSENGER_REDIS_*`   | The Redis configuration for the pub/sub connection | --            |
 
 <sup>[1]</sup> `redis` should be used in load-balanced installations of Directus
 

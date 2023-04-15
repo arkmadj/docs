@@ -1,13 +1,16 @@
+---
+description: Layouts are customized displays for viewing and interacting with the Items in a Collection.
+readTime: 9 min read
+---
+
 # Layouts
 
 > Layouts are customized displays for viewing and interacting with the Items in a Collection. This makes working with
 > some general category of data model, such as map locations or calendar events, a more human-friendly experience.
 
-[[toc]]
-
 ## What's a Layout?
 
-<video autoplay muted loop controls title="Layouts Montage">
+<video autoplay playsinline muted loop controls title="Layouts Montage">
 	<source src="https://cdn.directus.io/docs/v9/app-guide/layouts/layouts-20220415A/layouts-montage-20220419A.mp4" type="video/mp4" />
 </video>
 
@@ -19,14 +22,14 @@ to view and interact with Items in a Collection.
 The following sections detail the Layouts managed and supported by the Directus Team. Keep in mind that Directus is
 open-source, modular and extensible. You are free to create any Layout you need on self-hosted and Enterprise Cloud
 Projects. Additionally, Directus Cloud is always adding more Layouts to its
-[Cloud Exclusive Extensions](/cloud/glossary/#extensions), so check back often to stay up-to-date with the latest and
+[Cloud Exclusive Extensions](/cloud/glossary#extensions), so check back often to stay up-to-date with the latest and
 greatest. Additionally, you can join the community on [Discord](https://discord.com/invite/directus) and
 [GitHub](https://github.com/directus/directus/discussions) to find thousands of engineers guiding development of the
 Directus platform.
 
 ## How it Works
 
-<video autoplay muted loop controls title="Adjust Item Layouts">
+<video autoplay playsinline muted loop controls title="Adjust Item Layouts">
 	<source src="https://cdn.directus.io/docs/v9/app-guide/layouts/layouts-20220415A/adjust-page-layout-20220415A.mp4" type="video/mp4" />
 </video>
 
@@ -108,12 +111,8 @@ Layout used in the Content Module. It includes the following controls.
 
 ::: warning Manual Sorting Requires Configuration
 
-Only available if a Sort column has been configured in the Collection's Data Model Settings.
-
-<!--
-@TODO configuration > data-model
-Link
--->
+Only available if you [configure a sort field](/configuration/data-model/collections#sort-field) in the Collection's
+Data Model Settings.
 
 :::
 
@@ -122,7 +121,7 @@ Link
 ![Card Layout](https://cdn.directus.io/docs/v9/app-guide/layouts/layouts-20220415A/card-layout-20220416A.webp)
 
 This tiled Layout is ideal for Collections that prioritize an image _(e.g. a user or blog post)_. This is the default
-for both the [User Directory](/app/user-directory/) and [File Library](/app/file-library/). It includes the following
+for both the [User Directory](/app/user-directory) and [File Library](/app/file-library). It includes the following
 controls.
 
 **Layout Options**
@@ -175,7 +174,7 @@ To use this Layout, the Collection will need at least one datetime Field to set 
 start and end time)_.
 
 <!--
-@TODO Config > Fields
+@TODO configuration > data-model > fields
 Link to Datetime Field
 -->
 
@@ -214,7 +213,7 @@ _There is no Subheader on the Map Layout._
 To use this Layout, the Collection must have a Map Field configured.
 
 <!--
-@TODO Config > Fields
+@TODO configuration > data-model > fields
 Link to Map Field
 -->
 
@@ -260,7 +259,7 @@ To make this Layout work, you will need to configure an appropriate status Field
 Field under **"Group By"** in the Layout Options menu.
 
 <!--
-@TODO Config > Fields
+@TODO configuration > data-model > fields
 Create and link to Kanban config tutorial.
 -->
 

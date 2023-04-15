@@ -1,3 +1,8 @@
+---
+description: A breakdown of the Directus platform architecture.
+readTime: 2 min read
+---
+
 # Architecture
 
 **Directus is a wrapper for both your database and file asset storage system.**
@@ -34,5 +39,5 @@ Command-Line Interfaces (CLI). One enables server-side actions relating to your 
 database or resetting a user. The other allows you to interact with a Directus instance as you would with an SDK.
 
 Directus is 100% open-source, modular, and extensible, ensuring you will never hit a hard feature ceiling within the
-platform. Built entirely in crispy clean Typescript, mostly on Node.js and Vue.js, you have to power to add or modify
+platform. Built entirely in crispy clean Typescript, mostly on Node.js and Vue.js, you have the power to add or modify
 _any feature_ with your own custom extensions.

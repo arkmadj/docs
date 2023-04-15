@@ -1,10 +1,15 @@
+---
+description: How to host Directus on AWS.
+readTime: 2 min read
+---
+
 # AWS
 
 While there are many different ways to run Directus on AWS, from single EC2 instances to a full ELB load-balanced
 configuration, we like the following combination of services:
 
 - Elastic Beanstalk (EB)
-  - Elastic Load-Balancer (ELB)
+  - Elastic Load Balancer (ELB)
   - Elastic Compute Cloud (EC2)
 - CodeDeploy
 - Simple Storage Service (S3)
@@ -33,7 +38,7 @@ variables, see [Environment Variables](/self-hosted/config-options)
 Allows you to automatically deploy updates to your Directus instance or extensions to Elastic Beanstalk.
 
 See
-[Automatically Deploy from GitHub Using AWS CodeDeploy](https://aws.amazon.com/blogs/devops/automatically-deploy-from-github-using-aws-codedeploy/)
+[Automatically Deploy from GitHub Using AWS CodeDeploy](https://aws.amazon.com/blogs/devops/automatically-deploy-from-github-using-aws-codedeploy)
 for more information.
 
 ## Simple Storage Service (S3)

@@ -1,3 +1,8 @@
+---
+description: How to install Directus via CLI
+readTime: 2 min read
+---
+
 # Installing from CLI
 
 ## 1. Confirm Minimum Requirements
@@ -68,12 +73,11 @@ npx directus start
 
 ## 4. View your Project
 
-The default port used by Directus is 8055. To view your project locally, go to
-[http://localhost:8055](http://localhost:8055) in your browser.
+The default port used by Directus is 8055. To view your project locally, go to `http://localhost:8055` in your browser.
 
 ::: tip Changing Port
 
-If you want to use a different port, use [the `PORT` environment variable](/self-hosted/config-options/#general).
+If you want to use a different port, use [the `PORT` environment variable](/self-hosted/config-options#general).
 
 :::
 
@@ -86,4 +90,4 @@ By default, the `create-directus-project` tool will set the file permissions of 
 
 ## Configure / Update / Upgrade your Project
 
-See the [Updates & Migrations](/self-hosted/upgrades-migrations/) to learn how to maintain your project moving forward.
+See the [Updates & Migrations](/self-hosted/upgrades-migrations) to learn how to maintain your project moving forward.

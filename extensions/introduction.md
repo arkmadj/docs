@@ -1,3 +1,8 @@
+---
+description: An introduction to custom Extensions in Directus.
+readTime: 2 min read
+---
+
 # Extensions
 
 > In addition to being highly customizable, Directus has been architected to be completely modular and extensible. This
@@ -10,27 +15,33 @@ expanded to suit any need. However, the following extension types come with the 
 
 ## Extension SDK
 
-The easiest way to start creating extensions is to use the [Extensions SDK](/extensions/creating-extensions/).
+The easiest way to start creating extensions is to use the [Extensions SDK](/extensions/creating-extensions).
 
 ## App Extensions
 
 Allow creating custom experiences within the Directus App.
 
-- [Modules](/extensions/modules/) — Created with Vue.js
-- [Layouts](/extensions/layouts/) — Created with Vue.js
-- [Interfaces](/extensions/interfaces/) — Created with Vue.js
-- [Displays](/extensions/displays/) — Created with Vue.js
-- [Panels](/extensions/panels/) — Created with Vue.js
-- [Themes](/extensions/themes/) — Created with custom CSS
+- [Modules](/extensions/modules) — Created with Vue.js
+- [Layouts](/extensions/layouts) — Created with Vue.js
+- [Interfaces](/extensions/interfaces) — Created with Vue.js
+- [Displays](/extensions/displays) — Created with Vue.js
+- [Panels](/extensions/panels) — Created with Vue.js
+- [Themes](/extensions/themes) — Created with custom CSS
 
 ## API Extensions
 
 Allow extending and customizing the data pipeline and platform logic.
 
-- [Endpoints](/extensions/endpoints/) — Created with JavaScript / Node.js
-- [Hooks](/extensions/hooks/) — Created with JavaScript / Node.js
-- [Email Templates](/extensions/email-templates/) — Created with Liquid.js
-- [Migrations](/extensions/migrations/) — Created with JavaScript / Node.js
+- [Endpoints](/extensions/endpoints) — Created with JavaScript / Node.js
+- [Hooks](/extensions/hooks) — Created with JavaScript / Node.js
+- [Email Templates](/extensions/email-templates) — Created with Liquid.js
+- [Migrations](/extensions/migrations) — Created with JavaScript / Node.js
+
+## Hybrid Extensions
+
+Allow adding functionality to the API as well as the App.
+
+- [Operations](/extensions/operations) — Created with Vue.js and JavaScript / Node.js
 
 <!-- ## CLI Extensions
 

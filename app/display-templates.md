@@ -1,3 +1,10 @@
+---
+description:
+  Display Templates, a utility used throughout Directus, allow you to set Field Values and custom text in order to
+  better represent the Items in a Collection.
+readTime: 1 min read
+---
+
 # Display Templates
 
 > Display Templates, a utility used throughout Directus, allow you to set Field Values and custom text in order to
@@ -5,12 +12,12 @@
 
 ## How it Works
 
-<video title="Set Display Template" autoplay muted loop controls>
+<video title="Set Display Template" autoplay playsinline muted loop controls>
 	<source src="https://cdn.directus.io/docs/v9/app-guide/display-templates/display-templates-20220523A/set-display-templates-20220523A.mp4" type="video/mp4" />
 </video>
 
-Display Templates can be found in various places all throughout the App, such as [Layout Options](/app/layouts/) and the
-[List Panel](/app/insights/#lists) in Insights. Display Templates are easy to setup, just follow these steps:
+Display Templates can be found in various places all throughout the App, such as [Layout Options](/app/layouts) and the
+[List Panel](/app/insights#lists) in Insights. Display Templates are easy to setup, just follow these steps:
 
 - Click <span mi icon>add_box</span> to add a Field or relationally linked Field.
 - Type in any custom text as desired.
